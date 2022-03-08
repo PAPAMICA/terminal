@@ -37,9 +37,9 @@ I work on MacOS, but sometimes I need to run some scripts in Debian directly.. S
  - Docker (if you use `temp` option)
 
 ### Commands
-- stop
-- list <snaps/vms>
-- rollback
-- restore <snap_name>
-- delete
-- temp
+- `stop`
+- `list <snaps/vms>`
+- `rollback`
+- `restore <snap_name>`
+- `delete`
+- `temp`
