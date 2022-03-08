@@ -3,7 +3,9 @@
 
 ## ⚡️ Informations
 **Operating System :** MacOS Monterey
+
 **Terminal Client :** [Tabby](https://tabby.sh/)
+
 **Text Editor :** [Micro](https://micro-editor.github.io/)
 
 ## 📦️ Packages
