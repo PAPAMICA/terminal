@@ -59,10 +59,12 @@ eval "$(direnv hook zsh)"
 
 ### EXA
 # https://the.exa.website/
-alias ls="exa -a"           # short, multi-line
-alias ll="exa -1a"          # list, 1 per line
-alias ld="ll"                   # ^^^, NOTE: Trying to move to this for alternate hand commands
-alias la="exa -lah"        # list w/ info
+alias ls="exa -a --icons"         # short, multi-line
+alias ll="exa -1a --icons"        # list, 1 per line
+alias ld="ll"             # ^^^, NOTE: Trying to move to this for alternate hand commands
+alias la="exa -la --icons"        # list with info
+alias lt="exa -1a --tree --icons"        # list with tree
+alias lat="exa -la --tree --icons"        # list with info and tree
 
 
 ### FD
@@ -77,26 +79,19 @@ alias "?"="navi"
 alias help="navi"
 
 
-### SHELL HISTORY
-# https://github.com/pawamoy/shell-history
-#if [[ $- == *i* ]] && command -v shellhistory-location &>/dev/null; then
-#    . $(shellhistory-location)
-#    shellhistory enable
-#fi
-
 
 ### AD
 # https://github.com/tanrax/terminal-AdvancedNewFile
 alias add="python3 ~/Library/Python/3.9/lib/python/site-packages/advance_touch.py"
 
 ### RACCOURCIS
-alias docker="sudo docker"
+alias docker="sudo docker" # Pas bien mais pratique
 alias w="watch "
-alias nano="micro"
+alias nano="micro" # Question d'habitudes ...
 alias swift="/usr/local/bin/swift"
 
 ### Debian environnment
-#
+# 
 alias debian="~/kDrive/TeamBlue/environments/debian/debian.sh"
 
 

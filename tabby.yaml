@@ -1,0 +1,238 @@
+version: 3
+profiles:
+  - type: local
+    name: MacOS
+    options:
+      command: /bin/zsh
+      args:
+        - '--login'
+      env: {}
+    icon: fab fa-apple
+    id: local:custom:MacOS:3c17247b-80bf-4963-9336-2f7b973d15fc
+hotkeys:
+  toggle-window:
+    - Ctrl-Space
+  copy-current-path: []
+  ctrl-c:
+    - Ctrl-C
+  copy:
+    - ⌘-C
+  paste:
+    - ⌘-V
+  clear:
+    - ⌘-K
+  select-all:
+    - ⌘-A
+  zoom-in:
+    - ⌘-=
+    - ⌘-Shift-=
+  zoom-out:
+    - ⌘--
+    - ⌘-Shift--
+  reset-zoom:
+    - ⌘-0
+  home:
+    - ⌘-Left
+    - Home
+  end:
+    - ⌘-Right
+    - End
+  previous-word:
+    - ⌥-Left
+  next-word:
+    - ⌥-Right
+  delete-previous-word:
+    - ⌥-Backspace
+  delete-next-word:
+    - ⌥-Delete
+  search:
+    - ⌘-F
+  pane-focus-all:
+    - ⌘-Shift-I
+  restart-telnet-session: []
+  restart-ssh-session: []
+  launch-winscp: []
+  settings:
+    - ⌘-,
+  serial:
+    - Alt-K
+  restart-serial-session: []
+  new-window:
+    - ⌘-N
+  new-tab:
+    - ⌘-T
+  profile: {}
+  profile-selectors: {}
+  toggle-fullscreen:
+    - Ctrl+⌘+F
+  close-tab:
+    - ⌘-W
+  reopen-tab:
+    - ⌘-Shift-T
+  toggle-last-tab: []
+  rename-tab:
+    - ⌘-R
+  next-tab:
+    - Ctrl-Tab
+  previous-tab:
+    - Ctrl-Shift-Tab
+  move-tab-left:
+    - ⌘-Shift-Left
+  move-tab-right:
+    - ⌘-Shift-Right
+  rearrange-panes:
+    - ⌘-Shift
+  tab-1:
+    - ⌘-1
+  tab-2:
+    - ⌘-2
+  tab-3:
+    - ⌘-3
+  tab-4:
+    - ⌘-4
+  tab-5:
+    - ⌘-5
+  tab-6:
+    - ⌘-6
+  tab-7:
+    - ⌘-7
+  tab-8:
+    - ⌘-8
+  tab-9:
+    - ⌘-9
+  tab-10:
+    - ⌘-0
+  duplicate-tab: []
+  tab-11: []
+  tab-12: []
+  tab-13: []
+  tab-14: []
+  tab-15: []
+  tab-16: []
+  tab-17: []
+  tab-18: []
+  tab-19: []
+  tab-20: []
+  split-right:
+    - ⌘-Shift-D
+  split-bottom:
+    - ⌘-D
+  split-left: []
+  split-top: []
+  pane-nav-right:
+    - ⌘-⌥-Right
+  pane-nav-down:
+    - ⌘-⌥-Down
+  pane-nav-up:
+    - ⌘-⌥-Up
+  pane-nav-left:
+    - ⌘-⌥-Left
+  pane-nav-previous:
+    - ⌘-⌥-[
+  pane-nav-next:
+    - ⌘-⌥-]
+  pane-maximize:
+    - ⌘-⌥-Enter
+  close-pane:
+    - ⌘-Shift-W
+  profile-selector:
+    - ⌘-E
+  switch-profile:
+    - ⌘-Shift-E
+  scroll-to-bottom: []
+  settings-tab: {}
+  explode-tab:
+    - ⌘-Shift-.
+  combine-tabs:
+    - ⌘-Shift-,
+terminal:
+  searchOptions: {}
+  colorScheme:
+    name: Galaxy
+    foreground: '#ffffff'
+    background: '#1d2837'
+    cursor: '#bbbbbb'
+    colors:
+      - ''
+      - '#f9555f'
+      - '#21b089'
+      - '#fef02a'
+      - '#589df6'
+      - '#944d95'
+      - '#1f9ee7'
+      - '#bbbbbb'
+      - '#555555'
+      - '#fa8c8f'
+      - '#35bb9a'
+      - '#ffff55'
+      - '#589df6'
+      - '#e75699'
+      - '#3979bc'
+      - '#ffffff'
+  font: MesloLGS NF
+  fontSize: 18
+  cursor: beam
+  showBuiltinProfiles: false
+  profile: local:custom:MacOS:3c17247b-80bf-4963-9336-2f7b973d15fc
+  autoOpen: true
+  copyOnSelect: true
+  warnOnMultilinePaste: false
+  customColorSchemes:
+    - name: Material
+      foreground: '#eceff1'
+      background: rgba(38, 50, 56, 1)
+      selection: null
+      cursor: '#FFCC00'
+      cursorAccent: null
+      colors:
+        - rgba(255, 255, 255, 0.2)
+        - '#D62341'
+        - '#9ECE58'
+        - '#FAED70'
+        - '#396FE2'
+        - '#BB80B3'
+        - '#2DDAFD'
+        - '#d0d0d0'
+        - rgba(255, 255, 255, 0.2)
+        - '#FF5370'
+        - '#C3E88D'
+        - '#FFCB6B'
+        - '#82AAFF'
+        - '#C792EA'
+        - '#89DDFF'
+        - '#ffffff'
+    - name: Galaxy
+      foreground: '#ffffff'
+      background: '#1d2837'
+      cursor: '#bbbbbb'
+      colors:
+        - ''
+        - '#f9555f'
+        - '#21b089'
+        - '#fef02a'
+        - '#589df6'
+        - '#944d95'
+        - '#1f9ee7'
+        - '#bbbbbb'
+        - '#555555'
+        - '#fa8c8f'
+        - '#35bb9a'
+        - '#ffff55'
+        - '#589df6'
+        - '#e75699'
+        - '#3979bc'
+        - '#ffffff'
+  showTabProfileIcon: true
+appearance:
+  vibrancy: false
+enableWelcomeTab: false
+profileDefaults: {}
+pluginBlacklist:
+  - plugin-fig-integration
+recoverTabs: false
+titleControl:
+  replacePattern: ''
+clickableLinks:
+  modifier: ctrlKey
+enableAnalytics: false
+hacks: {}

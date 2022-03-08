@@ -2,7 +2,7 @@
 # Gérer une VM Debian depuis son terminal en une commande.
 # Prérequis : VirtualBox / VBoxManage / Créer une VM / Rediriger le port 2222 vers le port SSH
 # Pour la version temporaire : Docker / Docker-Compose
-# Commandes disponibles : stop / list <snap/vms> / rollback / restore <snap> / delete / temp
+# Commandes disponibles : stop / list <snaps/vms> / rollback / restore <snap> / delete / temp
 
 VM=Debian
 SSH_PASSWORD=''
@@ -18,7 +18,7 @@ if [[ $1 == "stop" ]]; then
     name=$2
     VBoxManage snapshot $VM take $name
   elif [[ $1 == "list" ]]; then
-    if [[ $2 == "snap" ]]; then
+    if [[ $2 == "snaps" ]]; then
       VBoxManage snapshot $VM list
     elif [[ $2 == "vms" ]]; then
       VBoxManage list vms
@@ -42,7 +42,7 @@ if [[ $1 == "stop" ]]; then
     name=$2
     VBoxManage snapshot $VM delete $name
   elif [[ $1 == "temp" ]]; then
-    docker-compose run
+    sudo docker run -v $HOME:/root -it debian bash
   else
     RUNNING=$(VBoxManage list runningvms | awk '{print $1}' )
     if [ -z $RUNNING ]; then
