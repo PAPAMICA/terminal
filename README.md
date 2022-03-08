@@ -1,12 +1,12 @@
-# My terminal
+# ✨ My terminal ✨
 *Update : 2022/03/08*
 
-## Informations
+## ⚡️ Informations
 **Operating System :** MacOS Monterey
 **Terminal Client :** [Tabby](https://tabby.sh/)
 **Text Editor :** [Micro](https://micro-editor.github.io/)
 
-## Packages
+## 📦️ Packages
 
  - [ad](https://github.com/tanrax/terminal-AdvancedNewFile) : Create folders and files easily
  - [atuin](https://github.com/ellie/atuin) : Manage your commands history
@@ -24,7 +24,7 @@
  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) : Like fish
  - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) : Like fish too
 
-## Debian environment
+## 🔨 Debian environment
 I work on MacOS, but sometimes I need to run some scripts in Debian directly.. So .. I have scripted that !
 
 ### Requirements
