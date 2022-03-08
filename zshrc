@@ -92,7 +92,11 @@ alias swift="/usr/local/bin/swift"
 
 ### Debian environnment
 # 
-alias debian="~/kDrive/TeamBlue/environments/debian/debian.sh"
+alias debian="~/kDrive/scripts/debian.sh"
+
+### MacOS Update
+#
+alias macos_update="~/kDrive/scripts/macos_update.sh"
 
 
 ### TIPEE
