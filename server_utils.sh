@@ -118,6 +118,11 @@ install='pip3 install thefuck  > /dev/null 2> /dev/null'
 zshrc='eval $(thefuck --alias)'
 app_install $app $install $zshrc
 
+## zsh_autocompletion
+app='zsh_autocompletion'
+install='git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions > /dev/null 2> /dev/null'
+zshrc='source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh'
+app_install $app $install $zshrc
 
 echo "export LANG=C.UTF-8 > /dev/null 2> /dev/null && export LANG=en_US.UTF-8 > /dev/null 2> /dev/null" >> ~/.zshrc
 zsh
