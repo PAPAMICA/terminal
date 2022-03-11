@@ -32,6 +32,10 @@
 ```bash
 bash -c "$(curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh)"
 ```
+If you want an oneliner and you don't have curl installed :
+```bash
+apt update && apt install -y curl && bash -c "$(curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh)"
+```
 ## 🔨 Debian environment
 I work on MacOS, but sometimes I need to run some scripts in Debian directly.. So .. I have scripted that !
 
