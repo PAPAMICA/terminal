@@ -121,7 +121,8 @@ app_install $app $install $zshrc
 ## zsh_autocompletion
 app='zsh_autocompletion'
 install='git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions > /dev/null 2> /dev/null'
-zshrc='source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh'
+zshrc='source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"'
 app_install $app $install $zshrc
 
 localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
