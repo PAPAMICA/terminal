@@ -30,7 +30,7 @@
 ## ⚙️ Install script for Debian / Ubuntu server
 
 ```bash
-bash -c "$(curl https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh)
+bash -c "$(curl https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh)"
 ```
 ## 🔨 Debian environment
 I work on MacOS, but sometimes I need to run some scripts in Debian directly.. So .. I have scripted that !
