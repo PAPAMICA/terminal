@@ -124,5 +124,5 @@ install='git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-a
 zshrc='source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh'
 app_install $app $install $zshrc
 
-echo "export LANG=C.UTF-8" >> ~/.zshrc
+echo "export LC_ALL=en_US.UTF-8" >> ~/.zshrc
 zsh
