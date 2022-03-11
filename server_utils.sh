@@ -21,15 +21,15 @@ echo " ✅ System have been updated !"
 apt_install () {
     apt-get install -y $1 > /dev/null 2> /dev/null
     if [ $? -eq 0 ]; then
-        echo "   ($i/5) ✅ $1"
+        echo "   ($i/6) ✅ $1"
     else
-        echo "   ($i/5) ❌ $1"
+        echo "   ($i/6) ❌ $1"
     fi
 }
 echo ""
 echo "-- Requirements --"
 echo " 🤖 Installing $1 ..."
-PACKAGES="git curl wget lsb-release pip"
+PACKAGES="git curl wget lsb-release locales pip"
 i=0
 for PACKAGE in $PACKAGES; do
     i=$((i+1))
@@ -124,5 +124,5 @@ install='git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-a
 zshrc='source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh'
 app_install $app $install $zshrc
 
-echo "export LC_ALL=en_US.UTF-8" >> ~/.zshrc
+localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 zsh
