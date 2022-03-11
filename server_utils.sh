@@ -77,7 +77,7 @@ app_install $app $install $zshrc
 
 ## atuin
 app='atuin'
-install='bash -c "$(curl https://raw.githubusercontent.com/ellie/atuin/main/install.sh)" > /dev/null 2> /dev/null && atuin import auto > /dev/null 2> /dev/null'
+install='bash -c "$(curl -s https://raw.githubusercontent.com/ellie/atuin/main/install.sh)" > /dev/null 2> /dev/null && atuin import auto > /dev/null 2> /dev/null'
 zshrc='eval "$(atuin init zsh)"'
 app_install $app $install $zshrc
 
