@@ -21,15 +21,15 @@ echo " ✅ System have been updated !"
 apt_install () {
     apt-get install -y $1 > /dev/null 2> /dev/null
     if [ $? -eq 0 ]; then
-        echo "   ($i/6) ✅ $1"
+        echo "   ($i/8) ✅ $1"
     else
-        echo "   ($i/6) ❌ $1"
+        echo "   ($i/8) ❌ $1"
     fi
 }
 echo ""
 echo "-- Requirements --"
 echo " 🤖 Installing $1 ..."
-PACKAGES="git curl wget lsb-release locales pip"
+PACKAGES="git curl wget lsb-release locales pip make bzip2"
 i=0
 for PACKAGE in $PACKAGES; do
     i=$((i+1))
@@ -95,7 +95,7 @@ app_install $app $install $zshrc
 
 ## btop
 app='btop'
-install='apt-get install -y make wget > /dev/null 2> /dev/null && mkdir btop && cd btop && wget https://github.com/aristocratos/btop/releases/download/v1.2.5/btop-x86_64-linux-musl.tbz > /dev/null 2> /dev/null && tar -xf btop-x86_64-linux-musl.tbz > /dev/null 2> /dev/null && make install > /dev/null 2> /dev/null && cd .. && rm -rf btop'
+install='mkdir btop && cd btop && wget https://github.com/aristocratos/btop/releases/download/v1.2.5/btop-x86_64-linux-musl.tbz > /dev/null 2> /dev/null && tar -xf btop-x86_64-linux-musl.tbz > /dev/null 2> /dev/null && make install > /dev/null 2> /dev/null && cd .. && rm -rf btop'
 zshrc='alias top="btop"
 alias htop="btop"'
 app_install $app $install $zshrc
