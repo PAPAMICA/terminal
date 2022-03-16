@@ -12,6 +12,7 @@
 
  - [ad](https://github.com/tanrax/terminal-AdvancedNewFile) : Create folders and files easily
  - [atuin](https://github.com/ellie/atuin) : Manage your commands history
+ - [bachtop](https://github.com/aristocratos/bashtop) : Better `htop`
  - [bat](https://github.com/sharkdp/bat) : Better `cat`
  - [dog](https://github.com/ogham/dog) : Better `dig`
  - [direnv](https://direnv.net/) : Set up environment variables based on the folder
