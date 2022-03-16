@@ -87,6 +87,12 @@ install='pip3 install advance-touch > /dev/null 2> /dev/null'
 zshrc='alias add="python3 ~/Library/Python/3.9/lib/python/site-packages/advance_touch.py"'
 app_install $app $install $zshrc
 
+## bat
+app='bat'
+install='apt-get install -y bat > /dev/null 2> /dev/null'
+zshrc='alias cat="bat"'
+app_install $app $install $zshrc
+
 ## duf
 app='duf'
 install='apt-get install -y duf > /dev/null 2> /dev/null'
