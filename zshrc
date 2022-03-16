@@ -72,6 +72,15 @@ alias lat="exa -la --tree --icons"        # list with info and tree
 alias locate="fd"
 alias find="fd"
 
+### BAT
+# https://github.com/sharkdp/bat
+alias cat="bat"
+
+### BTOP
+# https://github.com/aristocratos/btop
+alias htop="btop"
+alias top="btop"
+
 
 ### NAVI
 # https://github.com/denisidoro/navi
