@@ -128,7 +128,8 @@ curl -s "https://raw.githubusercontent.com/PAPAMICA/terminal/main/cheat_conf.yml
 curl -s "https://raw.githubusercontent.com/PAPAMICA/terminal/main/cheat_autocomplete.zsh" >> ~/.oh-my-zsh/custom/cheat.zsh && \ 
 mkdir ~/.config/cheat/cheatsheets/personal/'
 zshrc='alias "?"="cheat"
-alias "??"="cheat perso"'
+alias "??"="cheat perso"
+alias cheat-update="git -C ~/.config/cheat/cheatsheets/papamica/ pull > /dev/null 2> /dev/null && echo " ✅ Cheats updated !"'
 app_install $app $install $zshrc
 
 ## duf
