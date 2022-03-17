@@ -75,10 +75,10 @@ alias find="fd"
 
 ### BAT
 # https://github.com/sharkdp/bat
-alias cat=bat --style="header"
-alias bat=bat --style="header"
-alias catn=bat
-alias batn=bat
+alias cat=bat --style="header" --pager "less -RF"
+alias bat=bat --style="header" --pager "less -RF"
+alias catn=bat --pager "less -RF"
+alias batn=bat --pager "less -RF"
 
 ### BTOP
 # https://github.com/aristocratos/btop

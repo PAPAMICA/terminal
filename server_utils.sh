@@ -95,10 +95,10 @@ app_install $app $install $zshrc
 ## bat
 app='bat'
 install='apt-get install -y bat > /dev/null 2> /dev/null'
-zshrc='alias cat=batcat --style="header"
-alias bat=batcat --style="header"
-alias catn=batcat
-alias batn=batcat'
+zshrc='alias cat=batcat --style="header" --pager "less -RF"
+alias bat=batcat --style="header" --pager "less -RF"
+alias catn=batcat --pager "less -RF"
+alias batn=batcat --pager "less -RF"'
 app_install $app $install $zshrc
 
 ## btop
