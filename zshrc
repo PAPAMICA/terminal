@@ -129,7 +129,7 @@ o() { openstack --os-compute-api-version 2.79 "$@" --fit-width ;}
 oss() { openstack --os-compute-api-version 2.79 server show "$@" --fit-width ;}
 
 ### Git
-gic() { git commit -a -m \'"$@"\' && git push}
+gc() { eval 'git add . && git commit -a -m "'$@'" && git push'}
 alias gaa="git add *"
 alias ga="git add"
 alias gps="git push"
