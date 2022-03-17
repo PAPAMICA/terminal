@@ -120,10 +120,10 @@ install='curl -s https://api.github.com/repos/cheat/cheat/releases/latest \
 | grep "browser_download_url.*cheat-linux-amd64.gz" \
 | cut -d : -f 2,3 \
 | tr -d \" \
-| wget -qi - && \
+| wget -qi - && \chdea
 gzip -d cheat-linux-amd64.gz > /dev/null 2> /dev/null && \
 chmod +x cheat-linux-amd64 && mv cheat-linux-amd64 /usr/local/bin/cheat && rm -rf cheat-linux-amd64*'
-zshrc='alias ?="cheat"'
+zshrc='alias "?"="cheat"'
 app_install $app $install $zshrc
 
 ## duf
