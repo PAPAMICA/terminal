@@ -123,8 +123,9 @@ install='curl -s https://api.github.com/repos/cheat/cheat/releases/latest \
 | wget -qi - && \chdea
 gzip -d cheat-linux-amd64.gz > /dev/null 2> /dev/null && \
 chmod +x cheat-linux-amd64 && mv cheat-linux-amd64 /usr/local/bin/cheat && rm -rf cheat-linux-amd64* && \
-git clone https://github.com/PAPAMICA/cheatsheets.git ~/.config/cheat/cheatsheets/papamica/ && \
+git clone https://github.com/PAPAMICA/cheatsheets.git ~/.config/cheat/cheatsheets/papamica/ > /dev/null 2> /dev/null && \
 curl -s "https://raw.githubusercontent.com/PAPAMICA/terminal/main/cheat_conf.yml" >> ~/.config/cheat/conf.yml && \
+curl -s "https://raw.githubusercontent.com/PAPAMICA/terminal/main/cheat_autocomplete.zsh" >> ~/.oh-my-zsh/custom/cheat.zsh && \ 
 mkdir ~/.config/cheat/cheatsheets/personal/'
 zshrc='alias "?"="cheat"
 alias "??"="cheat perso"'
@@ -157,8 +158,8 @@ app_install $app $install $zshrc
 ## fd
 app='fd'
 install='apt install -y fd-find > /dev/null 2> /dev/null'
-zshrc='alias locate="fd"
-alias find="fd"'
+zshrc='alias locate="fdfind"
+alias find="fdfind"'
 app_install $app $install $zshrc
 
 ## z
