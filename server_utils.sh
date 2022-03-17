@@ -10,8 +10,8 @@ fi
 
 # Update System
 echo ""
-echo "-- Update && Upgrade --"
-apt-get update > /dev/null 2> /dev/null && apt upgrade  > /dev/null 2> /dev/null
+echo "-- Update  --"
+apt-get update > /dev/null 2> /dev/null #&& apt upgrade  > /dev/null 2> /dev/null
 echo " ✅ System have been updated !"
 
 
