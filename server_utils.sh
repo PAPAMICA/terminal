@@ -11,8 +11,10 @@ fi
 # Update System
 echo ""
 echo "-- Update  --"
-apt-get update > /dev/null 2> /dev/null #&& apt upgrade  > /dev/null 2> /dev/null
-echo " ✅ System have been updated !"
+apt-get update > /dev/null 2> /dev/null
+UPGRADE=$(apt update 2>/dev/null | tail -1)
+echo " ℹ️  $UPGRADE"
+
 
 
 
@@ -119,7 +121,7 @@ install='curl -s https://api.github.com/repos/muesli/duf/releases/latest \
 | cut -d : -f 2,3 \
 | tr -d \" \
 | wget -qi - && \
-dpkg -i duf*.deb && rm duf*.deb > /dev/null 2> /dev/null'
+dpkg -i duf*.deb > /dev/null 2> /dev/null && rm duf*.deb > /dev/null 2> /dev/null'
 zshrc=''
 app_install $app $install $zshrc
 
