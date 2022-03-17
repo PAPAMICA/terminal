@@ -23,15 +23,15 @@ echo " ℹ️  $UPGRADE"
 apt_install () {
     apt-get install -y $1 > /dev/null 2> /dev/null
     if [ $? -eq 0 ]; then
-        echo "   ($i/9) ✅ $1"
+        echo "   ($i/8) ✅ $1"
     else
-        echo "   ($i/9) ❌ $1"
+        echo "   ($i/8) ❌ $1"
     fi
 }
 echo ""
 echo "-- Requirements --"
 echo " 🤖 Installing $1 ..."
-PACKAGES="git curl wget gzip lsb-release locales pip make bzip2"
+PACKAGES="curl wget gzip lsb-release locales pip make bzip2"
 i=0
 for PACKAGE in $PACKAGES; do
     i=$((i+1))
@@ -64,6 +64,16 @@ app_install () {
     fi
 
 }
+
+## git
+app='git'
+install='apt-get install -y git > /dev/null 2> /dev/null'
+zshrc="gc() { eval 'git add . && git commit -a -m \"\'\$@\'\" && git push'}
+alias gaa=\"git add *\"
+alias ga=\"git add\"
+alias gps=\"git push\"
+alias gpl=\"git pull\""
+app_install $app $install $zshrc
 
 ## zsh
 app='zsh'
