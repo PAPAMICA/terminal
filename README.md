@@ -14,6 +14,7 @@
  - [atuin](https://github.com/ellie/atuin) : Manage your commands history
  - [bat](https://github.com/sharkdp/bat) : Better `cat`
  - [btop](https://github.com/aristocratos/btop) : Better `htop`
+ - [cheat](https://github.com/cheat/cheat) : Better `man`, all your cheatsheet in your terminal
  - [dog](https://github.com/ogham/dog) : Better `dig`
  - [direnv](https://direnv.net/) : Set up environment variables based on the folder
  - [duf](https://github.com/muesli/duf) : Better `df -h`with graphics (Thx [@Lucroz94](https://github.com/Lucroz94))
