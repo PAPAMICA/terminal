@@ -95,10 +95,10 @@ app_install $app $install $zshrc
 ## bat
 app='bat'
 install='apt-get install -y bat > /dev/null 2> /dev/null'
-zshrc='alias cat=\'batcat --style="header" --pager "less -RF"\'
-alias bat=\'batcat --style="header" --pager "less -RF"\'
-alias catn=\'batcat --pager "less -RF"\'
-alias batn=\'batcat --pager "less -RF"\''
+zshrc=`alias cat='batcat --style="header" --pager "less -RF"'
+alias bat='batcat --style="header" --pager "less -RF"'
+alias catn='batcat --pager "less -RF"'
+alias batn='batcat --pager "less -RF"'`
 app_install $app $install $zshrc
 
 ## btop
@@ -131,7 +131,7 @@ curl -s "https://raw.githubusercontent.com/PAPAMICA/terminal/main/cheat_autocomp
 mkdir ~/.config/cheat/cheatsheets/personal/'
 zshrc='alias "?"="cheat"
 alias "??"="cheat perso"
-alias cheat-update=\'git -C ~/.config/cheat/cheatsheets/papamica/ pull > /dev/null 2> /dev/null && echo " ✅ Cheats updated !"\''
+alias cheat-update=git -C ~/.config/cheat/cheatsheets/papamica/ pull > /dev/null 2> /dev/null && echo " ✅ Cheats updated !"'
 app_install $app $install $zshrc
 
 ## duf
