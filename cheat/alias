@@ -1,0 +1,36 @@
+# OpenStack
+        - openstack-delete-all # Delete all servers in project
+        -  osl # List servers
+        - oss <server_name> # Show server
+        - o # Openstack --fit-width
+
+# Github
+        - gc <message> # Add + commit + pull
+        - gaa # Add all
+        - ga <folders/files> # Add folders or files
+        - gps # Push
+        - gpl # Pull
+
+# Debian
+        - debian # Start VM and connect 
+        - debian stop # Stop VM
+        - debian snap <name> # Create snapshot
+        - debian list snaps # List snapshots availables
+        - debian rollback # Rollback to last snapshot
+        - debian delete <snapshot> # Delete snapshot
+        - debian temp # Start container and connect
+
+# ls
+        - lt # List with tree level 2
+        - ltf # List with tree
+        - la # List with info
+        - lat # List with info and tree
+
+# Find file
+        - find <file> <directory>
+
+# Update MacOS
+        - macos_update
+
+# Go to folder
+        - z <folder>

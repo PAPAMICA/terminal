@@ -1,0 +1,185 @@
+# Image
+# List images 
+openstack image list
+
+# Show image details
+openstack image show <image ID>
+
+# Create image
+openstack image create --disk-format qcow2 --file <file path> <image name>
+
+# Update image 
+openstack image set <key> <value> <image ID>
+
+# Delete image
+openstack image delete <image ID>chae
+
+---
+# Flavor 
+# List flavors
+openstack flavor list
+
+# Show flavor details
+openstack flavor show <flavor ID>
+
+---
+# Network
+# List networks
+openstack network list
+
+# Show network details
+openstack network show <network ID>
+
+# Create network
+openstack network create <network name>
+
+# Update network
+openstack network set <key> <value> <network ID>
+
+# Delete network
+openstack network delete <network ID>
+
+---
+# Subnet
+# List subnets
+openstack subnet list
+
+# Show subnet details
+openstack subnet show <subnet ID>
+
+# Create subnet
+openstack subnet create --network <network ID> --subnet-range <subnet CIDR> <subnet name>
+
+# Update network
+openstack subnet set <key> <value> <subnet ID>
+
+# Delete network
+openstack subnet delete <subnet ID>
+
+---
+# Router
+# List Routers
+openstack router list
+
+# Show router details
+openstack router show <router ID>
+
+# Create router
+openstack router create <router name>
+
+# Update router
+openstack router set <key> <value> <router ID>
+
+# Attach subnet to router
+openstack router add subnet <router ID> <subnet ID>
+
+# Detach subnet from router
+openstack router remove subnet <router ID> <subnet ID>
+
+# Delete router
+openstack router delete <router ID>
+
+---
+#Security Group
+# List security groups
+openstack security group list
+
+# Show security group details
+openstack security group show <security group ID>
+
+# Create security group
+openstack security group create <security group name>
+
+# Update security group
+openstack security group set <key> <value> <security group ID>
+
+# List rules in the security group
+openstack security group rule list <security group ID>
+
+# Add rule to the security group
+openstack security group rule create <key> <value> <security group ID>
+
+# Delete rule from the security group
+openstack security group rule delete <rule ID>
+
+# Delete security group
+openstack security group delete <security group ID>
+
+---
+# Keypair
+# List key pairs
+openstack key pairs list
+
+# Show key pairs details
+openstack key pairs show <key pairs ID>
+
+# Create key pairs
+openstack keypair create --private-key <file path> <key pair name>
+
+# Delete key pair
+openstack key pair delete <key pair ID>
+
+---
+# Server / Instance
+# List instances
+openstack server list
+
+# Show instance details
+openstack server show <instance ID>
+
+# Create instance
+openstack server create --flavor <flavor name> --image <image ID> --network <network ID> --key-name <key pair name> <instance name>
+
+# Update instance
+openstack server set <key> <value> <instance ID>
+
+# Delete instance
+openstack server delete <instance ID>
+
+---
+# Floating IP
+# List floating IPs
+openstack floating ip list
+
+# Create floating IP
+openstack floating ip create <network ID>
+
+# Attach floating IP to instance
+openstack server add floating ip <instance ID> <floating IP ID>
+
+# Detach floating IP from instance
+openstack server remove floating ip <instance ID> <floating IP ID>
+
+# Delete floating IP
+openstack floating ip delete <floating IP ID>
+
+---
+# Volume
+# List volumes
+openstack volume list
+
+# Show volume details
+openstack volume show <volume ID>
+
+# Create volume
+openstack volume create --size <size [GB]> <volume name>
+
+# Update volume
+openstack volume set <key> <value> <volume ID>
+
+# Attach the volume to the instance
+openstack server add volume <instance ID> <volume ID>
+
+# Detach the volume from the instance
+openstack server remove volume <instance ID> <volume ID>
+
+# Delete volume
+openstack volume delete <volume ID>
+
+---
+# Quota
+# List default quotas
+openstack quota show --default
+
+# List project quotas
+openstack quota show <project ID>

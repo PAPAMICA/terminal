@@ -1,0 +1,5 @@
+# List default quotas
+openstack quota show --default
+
+# List project quotas
+openstack quota show <project ID>

@@ -1,0 +1,20 @@
+# List volumes
+openstack volume list
+
+# Show volume details
+openstack volume show <volume ID>
+
+# Create volume
+openstack volume create --size <size [GB]> <volume name>
+
+# Update volume
+openstack volume set <key> <value> <volume ID>
+
+# Attach the volume to the instance
+openstack server add volume <instance ID> <volume ID>
+
+# Detach the volume from the instance
+openstack server remove volume <instance ID> <volume ID>
+
+# Delete volume
+openstack volume delete <volume ID>

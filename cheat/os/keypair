@@ -1,0 +1,11 @@
+# List key pairs
+openstack key pairs list
+
+# Show key pairs details
+openstack key pairs show <key pairs ID>
+
+# Create key pairs
+openstack keypair create --private-key <file path> <key pair name>
+
+# Delete key pair
+openstack key pair delete <key pair ID>

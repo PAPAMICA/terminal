@@ -1,0 +1,14 @@
+# List instances
+openstack server list
+
+# Show instance details
+openstack server show <instance ID>
+
+# Create instance
+openstack server create --flavor <flavor name> --image <image ID> --network <network ID> --key-name <key pair name> <instance name>
+
+# Update instance
+openstack server set <key> <value> <instance ID>
+
+# Delete instance
+openstack server delete <instance ID>

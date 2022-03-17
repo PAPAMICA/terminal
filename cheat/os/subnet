@@ -1,0 +1,14 @@
+# List subnets
+openstack subnet list
+
+# Show subnet details
+openstack subnet show <subnet ID>
+
+# Create subnet
+openstack subnet create --network <network ID> --subnet-range <subnet CIDR> <subnet name>
+
+# Update network
+openstack subnet set <key> <value> <subnet ID>
+
+# Delete network
+openstack subnet delete <subnet ID>

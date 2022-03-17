@@ -1,0 +1,20 @@
+# List Routers
+openstack router list
+
+# Show router details
+openstack router show <router ID>
+
+# Create router
+openstack router create <router name>
+
+# Update router
+openstack router set <key> <value> <router ID>
+
+# Attach subnet to router
+openstack router add subnet <router ID> <subnet ID>
+
+# Detach subnet from router
+openstack router remove subnet <router ID> <subnet ID>
+
+# Delete router
+openstack router delete <router ID>

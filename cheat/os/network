@@ -1,0 +1,14 @@
+# List networks
+openstack network list
+
+# Show network details
+openstack network show <network ID>
+
+# Create network
+openstack network create <network name>
+
+# Update network
+openstack network set <key> <value> <network ID>
+
+# Delete network
+openstack network delete <network ID>

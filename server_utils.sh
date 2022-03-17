@@ -23,15 +23,15 @@ echo " ℹ️  $UPGRADE"
 apt_install () {
     apt-get install -y $1 > /dev/null 2> /dev/null
     if [ $? -eq 0 ]; then
-        echo "   ($i/8) ✅ $1"
+        echo "   ($i/9) ✅ $1"
     else
-        echo "   ($i/8) ❌ $1"
+        echo "   ($i/9) ❌ $1"
     fi
 }
 echo ""
 echo "-- Requirements --"
 echo " 🤖 Installing $1 ..."
-PACKAGES="git curl wget lsb-release locales pip make bzip2"
+PACKAGES="git curl wget gzip lsb-release locales pip make bzip2"
 i=0
 for PACKAGE in $PACKAGES; do
     i=$((i+1))
@@ -112,6 +112,18 @@ make install > /dev/null 2> /dev/null && cd .. && rm -rf btop'
 zshrc='alias top="btop --utf-force"
 alias btop="btop --utf-force"
 alias htop="btop --utf-force"'
+app_install $app $install $zshrc
+
+## cheat
+app='cheat'
+install='curl -s https://api.github.com/repos/cheat/cheat/releases/latest \
+| grep "browser_download_url.*cheat-linux-amd64.gz" \
+| cut -d : -f 2,3 \
+| tr -d \" \
+| wget -qi - && \
+gzip -d cheat-linux-amd64.gz > /dev/null 2> /dev/null && \
+chmod +x cheat-linux-amd64 && mv cheat-linux-amd64 /usr/local/bin/cheat && rm -rf cheat-linux-amd64*'
+zshrc='alias ?="cheat"'
 app_install $app $install $zshrc
 
 ## duf

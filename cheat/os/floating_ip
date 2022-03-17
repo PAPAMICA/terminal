@@ -1,0 +1,14 @@
+# List floating IPs
+openstack floating ip list
+
+# Create floating IP
+openstack floating ip create <network ID>
+
+# Attach floating IP to instance
+openstack server add floating ip <instance ID> <floating IP ID>
+
+# Detach floating IP from instance
+openstack server remove floating ip <instance ID> <floating IP ID>
+
+# Delete floating IP
+openstack floating ip delete <floating IP ID>

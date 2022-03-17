@@ -1,0 +1,14 @@
+# List images 
+openstack image list
+
+# Show image details
+openstack image show <image ID>
+
+# Create image
+openstack image create --disk-format qcow2 --file <file path> <image name>
+
+# Update image 
+openstack image set <key> <value> <image ID>
+
+# Delete image
+openstack image delete <image ID>

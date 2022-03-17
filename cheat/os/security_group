@@ -1,0 +1,23 @@
+# List security groups
+openstack security group list
+
+# Show security group details
+openstack security group show <security group ID>
+
+# Create security group
+openstack security group create <security group name>
+
+# Update security group
+openstack security group set <key> <value> <security group ID>
+
+# List rules in the security group
+openstack security group rule list <security group ID>
+
+# Add rule to the security group
+openstack security group rule create <key> <value> <security group ID>
+
+# Delete rule from the security group
+openstack security group rule delete <rule ID>
+
+# Delete security group
+openstack security group delete <security group ID>
