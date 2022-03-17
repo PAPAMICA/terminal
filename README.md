@@ -1,5 +1,5 @@
 # ✨ My terminal ✨
-*Update : 2022/03/16*
+*Update : 2022/03/17*
 
 ## ⚡️ Informations
 **Operating System :** MacOS Monterey
@@ -14,7 +14,7 @@
  - [atuin](https://github.com/ellie/atuin) : Manage your commands history
  - [bat](https://github.com/sharkdp/bat) : Better `cat`
  - [btop](https://github.com/aristocratos/btop) : Better `htop`
- - [cheat](https://github.com/cheat/cheat) : Better `man`, all your cheatsheet in your terminal
+ - [cheat](https://github.com/cheat/cheat) : Better `man`, all your cheatsheet in your terminal (Check [PAPAMICA/cheatsheets](https://github.com/PAPAMICA/cheatsheets))
  - [dog](https://github.com/ogham/dog) : Better `dig`
  - [direnv](https://direnv.net/) : Set up environment variables based on the folder
  - [duf](https://github.com/muesli/duf) : Better `df -h`with graphics (Thx [@Lucroz94](https://github.com/Lucroz94))
