@@ -12,7 +12,6 @@ alias add="python3 ~/Library/Python/3.9/lib/python/site-packages/advance_touch.p
 
 # bat
 alias cat='batcat --style="header" --paging=never'
-alias bat='batcat --style="header" --paging=never'
 alias catn='batcat --pager "less -RF"'
 alias batn='batcat --pager "less -RF"'
 
@@ -46,7 +45,7 @@ alias find="fdfind"
 eval $(thefuck --alias)
 
 # git
-gc() { eval 'git add . && git commit -a -m "'$@'" && git push'}
+gic() { eval 'git add . && git commit -a -m "'$@'" && git push'}
 alias gaa="git add *"
 alias ga="git add"
 alias gps="git push"

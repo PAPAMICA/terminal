@@ -68,7 +68,7 @@ app_install () {
 ## git
 app='git'
 install='apt-get install -y git > /dev/null 2> /dev/null'
-zshrc="gc() { eval 'git add . && git commit -a -m \"'\$@'\" && git push'}
+zshrc="gic() { eval 'git add . && git commit -a -m \"'\$@'\" && git push'}
 alias gaa=\"git add *\"
 alias ga=\"git add\"
 alias gps=\"git push\"
@@ -83,10 +83,10 @@ sed -i -e "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME="agnoster"/g" ~/.zshrc > /dev/
 zshrc=''
 app_install $app $install $zshrc
 
-## micro
-app='micro'
-install='su - root -c "cd /usr/bin; wget -O- https://getmic.ro | GETMICRO_REGISTER=y sh; cd ~" > /dev/null 2> /dev/null'
-zshrc=''
+## ad
+app='ad'
+install='pip3 install advance-touch > /dev/null 2> /dev/null'
+zshrc='alias add="python3 ~/Library/Python/3.9/lib/python/site-packages/advance_touch.py"'
 app_install $app $install $zshrc
 
 ## atuin
@@ -94,12 +94,6 @@ app='atuin'
 install='bash -c "$(curl -s https://raw.githubusercontent.com/ellie/atuin/main/install.sh)" > /dev/null 2> /dev/null && \
 atuin import auto > /dev/null 2> /dev/null'
 zshrc='eval "$(atuin init zsh)"'
-app_install $app $install $zshrc
-
-## ad
-app='ad'
-install='pip3 install advance-touch > /dev/null 2> /dev/null'
-zshrc='alias add="python3 ~/Library/Python/3.9/lib/python/site-packages/advance_touch.py"'
 app_install $app $install $zshrc
 
 ## bat
@@ -144,6 +138,12 @@ alias \"??\"=\"cheat perso\"
 alias cheat-update='git -C ~/.config/cheat/cheatsheets/papamica/ pull > /dev/null 2> /dev/null && echo \" ✅ Cheats updated !\"'"
 app_install $app $install $zshrc
 
+## direnv
+app='direnv'
+install='apt install -y direnv > /dev/null 2> /dev/null'
+zshrc='eval "$(direnv hook zsh)"'
+app_install $app $install $zshrc
+
 ## duf
 app='duf'
 install='curl -s https://api.github.com/repos/muesli/duf/releases/latest \
@@ -167,7 +167,6 @@ alias ltf="exa -a --tree --icons"        # list with tree
 alias lat="exa -la --tree --icons"        # list with info and tree'
 app_install $app $install $zshrc
 
-
 ## fd
 app='fd'
 install='apt install -y fd-find > /dev/null 2> /dev/null'
@@ -175,16 +174,22 @@ zshrc='alias locate="fdfind"
 alias find="fdfind"'
 app_install $app $install $zshrc
 
-## z
-app='z'
-install='git clone https://github.com/rupa/z.git /bin/z > /dev/null 2> /dev/null'
-zshrc='. /bin/z/z.sh'
-app_install $app $install $zshrc
-
 ## fuck
 app='fuck'
 install='pip3 install thefuck  > /dev/null 2> /dev/null'
 zshrc='eval $(thefuck --alias)'
+app_install $app $install $zshrc
+
+## micro
+app='micro'
+install='su - root -c "cd /usr/bin; wget -O- https://getmic.ro | GETMICRO_REGISTER=y sh; cd ~" > /dev/null 2> /dev/null'
+zshrc=''
+app_install $app $install $zshrc
+
+## z
+app='z'
+install='git clone https://github.com/rupa/z.git /bin/z > /dev/null 2> /dev/null'
+zshrc='. /bin/z/z.sh'
 app_install $app $install $zshrc
 
 ## zsh_autocompletion

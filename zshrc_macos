@@ -76,7 +76,6 @@ alias find="fd"
 ### BAT
 # https://github.com/sharkdp/bat
 alias cat=bat --style="header" --pager "less -RF"
-alias bat=bat --style="header" --pager "less -RF"
 alias catn=bat --pager "less -RF"
 alias batn=bat --pager "less -RF"
 
@@ -134,7 +133,7 @@ o() { openstack --os-compute-api-version 2.79 "$@" --fit-width ;}
 oss() { openstack --os-compute-api-version 2.79 server show "$@" --fit-width ;}
 
 ### Git
-gc() { eval 'git add . && git commit -a -m "'$@'" && git push'}
+gic() { eval 'git add . && git commit -a -m "'$@'" && git push'}
 alias gaa="git add *"
 alias ga="git add"
 alias gps="git push"
