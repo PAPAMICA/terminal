@@ -63,7 +63,8 @@ alias ls="exa -a --icons"         # short, multi-line
 alias ll="exa -1a --icons"        # list, 1 per line
 alias ld="ll"             # ^^^, NOTE: Trying to move to this for alternate hand commands
 alias la="exa -la --icons"        # list with info
-alias lt="exa -1a --tree --icons"        # list with tree
+alias lt="exa -a --tree --icons --level=2"        # list with tree level 2
+alias ltf="exa -a --tree --icons"        # list with tree
 alias lat="exa -la --tree --icons"        # list with info and tree
 
 
@@ -126,3 +127,10 @@ alias openstack="openstack --os-compute-api-version 2.79"
 alias osl="openstack --os-compute-api-version 2.79 server list --fit-width"
 o() { openstack --os-compute-api-version 2.79 "$@" --fit-width ;}
 oss() { openstack --os-compute-api-version 2.79 server show "$@" --fit-width ;}
+
+### Git
+gic() { git commit -a -m "$@"}
+alias gaa="git add *"
+alias ga="git add"
+alias gps="git push"
+alias gpl="git pull"
