@@ -15,7 +15,7 @@ style: github
 formatter: terminal16m
 
 # Through which pager should output be piped? (Unset this key for no pager.)
-pager: less -FRX
+pager: less -RF
 
 
 cheatpaths:
