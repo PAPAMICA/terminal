@@ -105,8 +105,8 @@ app_install $app $install $zshrc
 ## bat
 app='bat'
 install='apt-get install -y bat > /dev/null 2> /dev/null'
-zshrc="alias cat='batcat --style=\"header\" --pager \"less -RF\"'
-alias bat='batcat --style=\"header\" --pager \"less -RF\"'
+zshrc="alias cat='batcat --style=\"header\" --paging=never'
+alias bat='batcat --style=\"header\" --paging=never'
 alias catn='batcat --pager \"less -RF\"'
 alias batn='batcat --pager \"less -RF\"'"
 app_install $app $install $zshrc
