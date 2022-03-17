@@ -68,7 +68,7 @@ app_install () {
 ## git
 app='git'
 install='apt-get install -y git > /dev/null 2> /dev/null'
-zshrc="gc() { eval 'git add . && git commit -a -m \"\'\$@\'\" && git push'}
+zshrc="gc() { eval 'git add . && git commit -a -m \"'\$@'\" && git push'}
 alias gaa=\"git add *\"
 alias ga=\"git add\"
 alias gps=\"git push\"
