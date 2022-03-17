@@ -75,7 +75,10 @@ alias find="fd"
 
 ### BAT
 # https://github.com/sharkdp/bat
-alias cat="bat"
+alias cat=bat --style="header"
+alias bat=bat --style="header"
+alias catn=bat
+alias batn=bat
 
 ### BTOP
 # https://github.com/aristocratos/btop
@@ -83,10 +86,12 @@ alias htop="btop"
 alias top="btop"
 
 
-### NAVI
-# https://github.com/denisidoro/navi
-alias "?"="navi"
-alias help="navi"
+### CHEAT
+# https://github.com/cheat/cheat
+alias "?"="cheat"
+alias "help"="cheat"
+alias "??"="cheat perso"
+alias cheat-update='git -C ~/.config/cheat/cheatsheets/papamica/ pull > /dev/null 2> /dev/null && echo " ✅ Cheats updated !"'
 
 
 
