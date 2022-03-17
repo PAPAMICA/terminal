@@ -124,7 +124,8 @@ install='curl -s https://api.github.com/repos/cheat/cheat/releases/latest \
 gzip -d cheat-linux-amd64.gz > /dev/null 2> /dev/null && \
 chmod +x cheat-linux-amd64 && mv cheat-linux-amd64 /usr/local/bin/cheat && rm -rf cheat-linux-amd64* && \
 git clone https://github.com/PAPAMICA/cheatsheets.git ~/.config/cheat/cheatsheets/papamica/ && \
-curl -s "https://raw.githubusercontent.com/PAPAMICA/terminal/main/cheat_config.yml" ~/.config/cheat/conf.yml'
+curl -s "https://raw.githubusercontent.com/PAPAMICA/terminal/main/cheat_conf.yml" >> ~/.config/cheat/conf.yml && \
+mkdir ~/.config/cheat/cheatsheets/personal/'
 zshrc='alias "?"="cheat"
 alias "??"="cheat perso"'
 app_install $app $install $zshrc
