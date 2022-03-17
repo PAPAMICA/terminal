@@ -1,0 +1,31 @@
+---
+# The editor to use with 'cheat -e <sheet>'. Defaults to $EDITOR or $VISUAL.
+editor: micro
+
+# Should 'cheat' always colorize output?
+colorize: true
+
+# Which 'chroma' colorscheme should be applied to the output?
+# Options are available here:
+#   https://github.com/alecthomas/chroma/tree/master/styles
+style: github
+
+# Which 'chroma' "formatter" should be applied?
+# One of: "terminal", "terminal256", "terminal16m"
+formatter: terminal16m
+
+# Through which pager should output be piped? (Unset this key for no pager.)
+pager: less -FRX
+
+
+cheatpaths:
+
+  - name: papamica
+    path: /root/.config/cheat/cheatsheets/papamica
+    tags: [ papamica ]
+    readonly: false
+
+  - name: personal
+    path: /root/.config/cheat/cheatsheets/personal
+    tags: [ personal ]
+    readonly: false
