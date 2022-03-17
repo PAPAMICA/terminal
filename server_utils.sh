@@ -65,7 +65,9 @@ app_install () {
 
 ## zsh
 app='zsh'
-install='apt-get install -y zsh > /dev/null 2> /dev/null && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended > /dev/null 2> /dev/null && sed -i -e "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME="agnoster"/g" ~/.zshrc > /dev/null 2> /dev/null'
+install='apt-get install -y zsh > /dev/null 2> /dev/null && \
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended > /dev/null 2> /dev/null && \
+sed -i -e "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME="agnoster"/g" ~/.zshrc > /dev/null 2> /dev/null'
 zshrc=''
 app_install $app $install $zshrc
 
@@ -77,7 +79,8 @@ app_install $app $install $zshrc
 
 ## atuin
 app='atuin'
-install='bash -c "$(curl -s https://raw.githubusercontent.com/ellie/atuin/main/install.sh)" > /dev/null 2> /dev/null && atuin import auto > /dev/null 2> /dev/null'
+install='bash -c "$(curl -s https://raw.githubusercontent.com/ellie/atuin/main/install.sh)" > /dev/null 2> /dev/null && \
+atuin import auto > /dev/null 2> /dev/null'
 zshrc='eval "$(atuin init zsh)"'
 app_install $app $install $zshrc
 
@@ -90,19 +93,33 @@ app_install $app $install $zshrc
 ## bat
 app='bat'
 install='apt-get install -y bat > /dev/null 2> /dev/null'
-zshrc='alias cat="bat"'
+zshrc='alias cat="batcat"
+alias bat="batcat"'
 app_install $app $install $zshrc
 
 ## btop
 app='btop'
-install='mkdir btop && cd btop && wget https://github.com/aristocratos/btop/releases/download/v1.2.5/btop-x86_64-linux-musl.tbz > /dev/null 2> /dev/null && tar -xf btop-x86_64-linux-musl.tbz > /dev/null 2> /dev/null && make install > /dev/null 2> /dev/null && cd .. && rm -rf btop'
-zshrc='alias top="btop"
-alias htop="btop"'
+install='mkdir btop && cd btop && \
+curl -s https://api.github.com/repos/aristocratos/btop/releases/latest \
+| grep "browser_download_url.*btop-x86_64-linux-musl.tbz" \
+| cut -d : -f 2,3 \
+| tr -d \" \
+| wget -qi - && \
+tar -xf btop-x86_64-linux-musl.tbz > /dev/null 2> /dev/null && \
+make install > /dev/null 2> /dev/null && cd .. && rm -rf btop'
+zshrc='alias top="btop --utf-force"
+alias btop="btop --utf-force"
+alias htop="btop --utf-force"'
 app_install $app $install $zshrc
 
 ## duf
 app='duf'
-install='apt-get install -y duf > /dev/null 2> /dev/null'
+install='curl -s https://api.github.com/repos/muesli/duf/releases/latest \
+| grep "browser_download_url.*amd64.deb" \
+| cut -d : -f 2,3 \
+| tr -d \" \
+| wget -qi - && \
+dpkg -i duf*.deb && rm duf*.deb > /dev/null 2> /dev/null'
 zshrc=''
 app_install $app $install $zshrc
 
