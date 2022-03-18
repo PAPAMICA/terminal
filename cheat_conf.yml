@@ -21,11 +21,11 @@ pager: less -RF
 cheatpaths:
 
   - name: papamica
-    path: /root/.config/cheat/cheatsheets/papamica
+    path: ~/.config/cheat/cheatsheets/papamica
     tags: [ papamica ]
     readonly: false
 
   - name: personal
-    path: /root/.config/cheat/cheatsheets/personal
+    path: ~/.config/cheat/cheatsheets/personal
     tags: [ personal ]
     readonly: false
