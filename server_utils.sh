@@ -168,7 +168,7 @@ alias lat="exa -la --tree --icons"        # list with info and tree'
 app_install $app $install $zshrc
 
 ## fd
-app='fd'
+app='fdfind'
 install='apt install -y fd-find > /dev/null 2> /dev/null'
 zshrc='alias locate="fdfind"
 alias find="fdfind"'
