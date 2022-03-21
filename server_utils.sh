@@ -186,6 +186,17 @@ install='su - root -c "cd /usr/bin; wget -O- https://getmic.ro | GETMICRO_REGIST
 zshrc=''
 app_install $app $install $zshrc
 
+## ripgrep
+app='rp'
+install='curl -s https://api.github.com/repos/BurntSushi/ripgrep/releases/latest \
+| grep "browser_download_url.*amd64.deb" \
+| cut -d : -f 2,3 \
+| tr -d \" \
+| wget -qi - && \
+dpkg -i ripgrep*.deb > /dev/null 2> /dev/null && rm ripgrep*.deb > /dev/null 2> /dev/null'
+zshrc='alias grep="rg"'
+app_install $app $install $zshrc
+
 ## z
 app='z'
 install='git clone https://github.com/rupa/z.git /bin/z > /dev/null 2> /dev/null'

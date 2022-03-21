@@ -93,6 +93,9 @@ alias "??"="cheat perso"
 alias cheat-update='git -C ~/.config/cheat/cheatsheets/papamica/ pull > /dev/null 2> /dev/null && echo " ✅ Cheats updated !"'
 
 
+### RIPGREP
+# https://github.com/BurntSushi/ripgrep
+alias grep="rg"
 
 ### AD
 # https://github.com/tanrax/terminal-AdvancedNewFile
@@ -131,6 +134,7 @@ alias openstack="openstack --os-compute-api-version 2.79"
 alias osl="openstack --os-compute-api-version 2.79 server list --fit-width"
 o() { openstack --os-compute-api-version 2.79 "$@" --fit-width ;}
 oss() { openstack --os-compute-api-version 2.79 server show "$@" --fit-width ;}
+
 
 ### Git
 gic() { eval 'git add . && git commit -a -m "'$@'" && git push'}

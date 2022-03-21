@@ -58,6 +58,9 @@ alias osl="openstack --os-compute-api-version 2.79 server list --fit-width"
 o() { openstack --os-compute-api-version 2.79 "$@" --fit-width ;}
 oss() { openstack --os-compute-api-version 2.79 server show "$@" --fit-width ;}
 
+# ripgrep
+alias grep="rg"
+
 # z
 . /bin/z/z.sh
 

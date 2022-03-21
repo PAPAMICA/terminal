@@ -26,6 +26,7 @@
  - [oh-my-zsh](https://ohmyz.sh/) : Making zsh pretty
  - [power10k](https://github.com/romkatv/powerlevel10k) : Customize your command prompt to perfection
  - [progress](https://github.com/Xfennec/progress) : Monitor the progress of multiple commands
+ - [ripgrep](https://github.com/BurntSushi/ripgrep) : Better `grep`
  - [z](https://github.com/rupa/z) : Get to your folders as quickly as possible
  - [zsh](https://www.zsh.org/) : More intuitive than bash
  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) : Like fish
