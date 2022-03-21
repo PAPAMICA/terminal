@@ -198,7 +198,7 @@ zshrc='alias grep="rg"'
 app_install $app $install $zshrc
 
 ## z
-app='z'
+app='_z'
 install='git clone https://github.com/rupa/z.git /bin/z > /dev/null 2> /dev/null'
 zshrc='. /bin/z/z.sh'
 app_install $app $install $zshrc
