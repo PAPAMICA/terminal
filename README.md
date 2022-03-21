@@ -18,8 +18,8 @@
  - [dog](https://github.com/ogham/dog) : Better `dig`
  - [direnv](https://direnv.net/) : Set up environment variables based on the folder
  - [duf](https://github.com/muesli/duf) : Better `df -h`with graphics (Thx [@Lucroz94](https://github.com/Lucroz94))
- - [exa](https://the.exa.website/) : Improving the ls command
- - [fd](https://github.com/sharkdp/fd) : Boost the find command
+ - [exa](https://the.exa.website/) : Improving the `ls` command
+ - [fd](https://github.com/sharkdp/fd) : Boost the `find` command
  - [fuck](https://github.com/nvbn/thefuck) : Fuck! I missed my command ! 
  - [navi](https://github.com/denisidoro/navi) :  The manual of manuals
  - [ncdu](https://dev.yorhel.nl/ncdu) : Display your storage simply and graphically
