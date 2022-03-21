@@ -187,7 +187,7 @@ zshrc=''
 app_install $app $install $zshrc
 
 ## ripgrep
-app='rp'
+app='rg'
 install='curl -s https://api.github.com/repos/BurntSushi/ripgrep/releases/latest \
 | grep "browser_download_url.*amd64.deb" \
 | cut -d : -f 2,3 \
