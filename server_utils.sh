@@ -210,5 +210,11 @@ zshrc='source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"'
 app_install $app $install $zshrc
 
+## zsh_syntax_highlighting
+app='zsh_syntax_highlighting'
+install='git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting > /dev/null 2> /dev/null'
+zshrc='source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+app_install $app $install $zshrc
+
 localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 zsh
