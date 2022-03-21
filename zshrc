@@ -67,3 +67,6 @@ alias grep="rg"
 # zsh_autocompletion
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
+
+# zsh-syntax-highlighting
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
