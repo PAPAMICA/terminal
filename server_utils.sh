@@ -97,7 +97,7 @@ zshrc='eval "$(atuin init zsh)"'
 app_install $app $install $zshrc
 
 ## bat
-app='bat'
+app='batcat'
 install='apt-get install -y bat > /dev/null 2> /dev/null'
 zshrc="alias cat='batcat --style=\"header\" --paging=never'
 alias bat='batcat --style=\"header\" --paging=never'
