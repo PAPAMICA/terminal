@@ -1,5 +1,5 @@
 # ✨ My terminal ✨
-*Update : 2022/03/17*
+*Update : 2022/03/22*
 
 Article Tech2Tech (in French) : [ppmc.me/t2t-terminal](https://ppmc.me/t2t-terminal)
 ## ⚡️ Informations
