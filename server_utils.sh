@@ -1,11 +1,10 @@
 #!/bin/bash
 
 # Active Verbose & Help
+VERBOSE="> /dev/null 2> /dev/null"
 if [ -n "$1" ]; then
     if [ $1 == "--verbose" ]; then
-        VERBOSE=" "
-    else
-        VERBOSE="> /dev/null 2> /dev/null"
+        VERBOSE=" "   
     fi
     if [ $1 == "--help" ]; then
         echo 'This script installs differents tools for the Shell (Check https://github.com/PAPAMICA/terminal).
