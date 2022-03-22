@@ -25,7 +25,7 @@ fi
 # Update System
 echo ""
 echo "-- Update  --"
-apt-get update "'"$VERBOSE"'"
+apt-get update $VERBOSE
 UPGRADE=$(apt update 2>/dev/null | tail -1)
 echo " ℹ️  $UPGRADE"
 
@@ -35,7 +35,7 @@ echo " ℹ️  $UPGRADE"
 # Installation
 ## Requierements
 apt_install () {
-    apt-get install -y $1 "'"$VERBOSE"'"
+    apt-get install -y $1 $VERBOSE
     if [ $? -eq 0 ]; then
         echo "   ($i/8) ✅ $1"
     else
