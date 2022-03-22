@@ -7,7 +7,9 @@ else
     VERBOSE=">. /dev/null 2> /dev/null"
 fi
 if [ $1 = "--help" ]; then
-    echo "This script install "
+    echo 'This script installs differents tools for the Shell (Check https://github.com/PAPAMICA/terminal).
+Use the "--verbose" argument to display the logs'
+    exit
 fi
 
 
@@ -16,8 +18,7 @@ fi
 if [ -x "$(command -v apt-get)" ]; then
     :
 else
-    echo 'This script installs differents tools for the Shell (Check https://github.com/PAPAMICA/terminal).
-Use the "--verbose" argument to display the logs'
+    echo 'This script is only compatible with Debian and Ubuntu'
     exit
 fi
 
