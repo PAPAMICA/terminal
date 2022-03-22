@@ -11,7 +11,7 @@ fi
 # Update System
 echo ""
 echo "-- Update  --"
-apt-get update > /dev/null 2> /dev/null
+apt-get update > /dev/null
 UPGRADE=$(apt update 2>/dev/null | tail -1)
 echo " ℹ️  $UPGRADE"
 
@@ -21,7 +21,7 @@ echo " ℹ️  $UPGRADE"
 # Installation
 ## Requierements
 apt_install () {
-    apt-get install -y $1 > /dev/null 2> /dev/null
+    apt-get install -y $1 > /dev/null
     if [ $? -eq 0 ]; then
         echo "   ($i/8) ✅ $1"
     else
@@ -58,7 +58,7 @@ app_install () {
             fi
             echo " ✅ $app have been installed !"
         else
-            echo " ❌ $app can't be installed !"
+            echo " ❌ $app can't be installed ! ($?)"
         fi
         
     fi
@@ -67,7 +67,7 @@ app_install () {
 
 ## git
 app='git'
-install='apt-get install -y git > /dev/null 2> /dev/null'
+install='apt-get install -y git > /dev/null'
 zshrc="gic() { eval 'git add . && git commit -a -m \"'\$@'\" && git push'}
 alias gaa=\"git add *\"
 alias ga=\"git add\"
@@ -77,28 +77,28 @@ app_install $app $install $zshrc
 
 ## zsh
 app='zsh'
-install='apt-get install -y zsh > /dev/null 2> /dev/null && \
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended > /dev/null 2> /dev/null && \
-sed -i -e "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME="agnoster"/g" ~/.zshrc > /dev/null 2> /dev/null'
+install='apt-get install -y zsh > /dev/null && \
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended > /dev/null && \
+sed -i -e "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME="agnoster"/g" ~/.zshrc > /dev/null'
 zshrc=''
 app_install $app $install $zshrc
 
 ## ad
 app='ad'
-install='pip3 install advance-touch > /dev/null 2> /dev/null'
+install='pip3 install advance-touch > /dev/null'
 zshrc='alias add="python3 ~/Library/Python/3.9/lib/python/site-packages/advance_touch.py"'
 app_install $app $install $zshrc
 
 ## atuin
 app='atuin'
-install='bash -c "$(curl -s https://raw.githubusercontent.com/ellie/atuin/main/install.sh)" > /dev/null 2> /dev/null && \
-atuin import auto > /dev/null 2> /dev/null'
+install='bash -c "$(curl -s https://raw.githubusercontent.com/ellie/atuin/main/install.sh)" > /dev/null && \
+atuin import auto > /dev/null'
 zshrc='eval "$(atuin init zsh)"'
 app_install $app $install $zshrc
 
 ## bat
 app='batcat'
-install='apt-get install -y bat > /dev/null 2> /dev/null'
+install='apt-get install -y bat > /dev/null'
 zshrc="alias cat='batcat --style=\"header\" --paging=never'
 alias bat='batcat --style=\"header\" --paging=never'
 alias catn='batcat --pager \"less -RF\"'
@@ -113,8 +113,8 @@ curl -s https://api.github.com/repos/aristocratos/btop/releases/latest \
 | cut -d : -f 2,3 \
 | tr -d \" \
 | wget -qi - && \
-tar -xf btop-x86_64-linux-musl.tbz > /dev/null 2> /dev/null && \
-make install > /dev/null 2> /dev/null && cd .. && rm -rf btop'
+tar -xf btop-x86_64-linux-musl.tbz > /dev/null && \
+make install > /dev/null && cd .. && rm -rf btop'
 zshrc='alias top="btop --utf-force"
 alias btop="btop --utf-force"
 alias htop="btop --utf-force"'
@@ -127,20 +127,20 @@ install='curl -s https://api.github.com/repos/cheat/cheat/releases/latest \
 | cut -d : -f 2,3 \
 | tr -d \" \
 | wget -qi - && \chdea
-gzip -d cheat-linux-amd64.gz > /dev/null 2> /dev/null && \
+gzip -d cheat-linux-amd64.gz > /dev/null && \
 chmod +x cheat-linux-amd64 && mv cheat-linux-amd64 /usr/local/bin/cheat && rm -rf cheat-linux-amd64* && \
-git clone https://github.com/PAPAMICA/cheatsheets.git ~/.config/cheat/cheatsheets/papamica/ > /dev/null 2> /dev/null && \
+git clone https://github.com/PAPAMICA/cheatsheets.git ~/.config/cheat/cheatsheets/papamica/ > /dev/null && \
 curl -s "https://raw.githubusercontent.com/PAPAMICA/terminal/main/cheat_conf.yml" >> ~/.config/cheat/conf.yml && \
 curl -s "https://raw.githubusercontent.com/PAPAMICA/terminal/main/cheat_autocomplete.zsh" >> ~/.oh-my-zsh/custom/cheat.zsh && \ 
 mkdir ~/.config/cheat/cheatsheets/personal/'
 zshrc="alias \"?\"=\"cheat\"
 alias \"??\"=\"cheat perso\"
-alias cheat-update='git -C ~/.config/cheat/cheatsheets/papamica/ pull > /dev/null 2> /dev/null && echo \" ✅ Cheats updated !\"'"
+alias cheat-update='git -C ~/.config/cheat/cheatsheets/papamica/ pull > /dev/null && echo \" ✅ Cheats updated !\"'"
 app_install $app $install $zshrc
 
 ## direnv
 app='direnv'
-install='apt install -y direnv > /dev/null 2> /dev/null'
+install='apt install -y direnv > /dev/null'
 zshrc='eval "$(direnv hook zsh)"'
 app_install $app $install $zshrc
 
@@ -151,13 +151,13 @@ install='curl -s https://api.github.com/repos/muesli/duf/releases/latest \
 | cut -d : -f 2,3 \
 | tr -d \" \
 | wget -qi - && \
-dpkg -i duf*.deb > /dev/null 2> /dev/null && rm duf*.deb > /dev/null 2> /dev/null'
+dpkg -i duf*.deb > /dev/null && rm duf*.deb > /dev/null'
 zshrc=''
 app_install $app $install $zshrc
 
 ## exa
 app='exa'
-install='apt install -y exa > /dev/null 2> /dev/null'
+install='apt install -y exa > /dev/null'
 zshrc='alias ls="exa -a --icons"         # short, multi-line
 alias ll="exa -1a --icons"        # list, 1 per line
 alias ld="ll"             # ^^^, NOTE: Trying to move to this for alternate hand commands
@@ -169,20 +169,20 @@ app_install $app $install $zshrc
 
 ## fd
 app='fdfind'
-install='apt install -y fd-find > /dev/null 2> /dev/null'
+install='apt install -y fd-find > /dev/null'
 zshrc='alias locate="fdfind"
 alias find="fdfind"'
 app_install $app $install $zshrc
 
 ## fuck
 app='fuck'
-install='pip3 install thefuck  > /dev/null 2> /dev/null'
+install='pip3 install thefuck  > /dev/null'
 zshrc='eval $(thefuck --alias)'
 app_install $app $install $zshrc
 
 ## micro
 app='micro'
-install='su - root -c "cd /usr/bin; wget -O- https://getmic.ro | GETMICRO_REGISTER=y sh; cd ~" > /dev/null 2> /dev/null'
+install='su - root -c "cd /usr/bin; wget -O- https://getmic.ro | GETMICRO_REGISTER=y sh; cd ~" > /dev/null'
 zshrc=''
 app_install $app $install $zshrc
 
@@ -193,26 +193,26 @@ install='curl -s https://api.github.com/repos/BurntSushi/ripgrep/releases/latest
 | cut -d : -f 2,3 \
 | tr -d \" \
 | wget -qi - && \
-dpkg -i ripgrep*.deb > /dev/null 2> /dev/null && rm ripgrep*.deb > /dev/null 2> /dev/null'
+dpkg -i ripgrep*.deb > /dev/null && rm ripgrep*.deb > /dev/null'
 zshrc='alias grep="rg"'
 app_install $app $install $zshrc
 
 ## z
 app='z'
-install='git clone https://github.com/rupa/z.git /bin/z > /dev/null 2> /dev/null'
+install='git clone https://github.com/rupa/z.git /bin/z > /dev/null'
 zshrc='. /bin/z/z.sh'
 app_install $app $install $zshrc
 
 ## zsh_autocompletion
 app='zsh_autocompletion'
-install='git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions > /dev/null 2> /dev/null'
+install='git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions > /dev/null'
 zshrc='source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"'
 app_install $app $install $zshrc
 
 ## zsh_syntax_highlighting
 app='zsh_syntax_highlighting'
-install='git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting > /dev/null 2> /dev/null'
+install='git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting > /dev/null'
 zshrc='source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 app_install $app $install $zshrc
 
