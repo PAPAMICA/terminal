@@ -21,6 +21,7 @@ Article Tech2Tech (in French) : [ppmc.me/t2t-terminal](https://ppmc.me/t2t-termi
  - [duf](https://github.com/muesli/duf) : Better `df -h`with graphics (Thx [@Lucroz94](https://github.com/Lucroz94))
  - [exa](https://the.exa.website/) : Improving the `ls` command
  - [fd](https://github.com/sharkdp/fd) : Boost the `find` command
+ - [fig](https://github.com/withfig/autocomplete) : Popup with subcommands and options
  - [fuck](https://github.com/nvbn/thefuck) : Fuck! I missed my command ! 
  - [navi](https://github.com/denisidoro/navi) :  The manual of manuals
  - [ncdu](https://dev.yorhel.nl/ncdu) : Display your storage simply and graphically
