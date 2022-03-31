@@ -51,11 +51,12 @@ apt_install () {
 copy_to_usershome () {
     _USERS="$(awk -F':' '{ if ( $3 >= 500 ) print $1 }' /etc/passwd)"
     for _USER in $_USERS; do
-        _dir="/home/${_USER}/$2"
+        _dir="/home/${_USER}"
         if [ -d "$_DIR" ]; then
-            mkdir -p $_DIR
-            /bin/cp "$1" "$_DIR"
-            chown $(id -un $_USER):$(id -gn $_USER) "$_DIR/$1"
+            mkdir -p $_DIR/$2
+            echo " ✅ $1 copied to $_USER home !"
+            /bin/cp "$1" "$_DIR/$2"
+            chown $(id -un $_USER):$(id -gn $_USER) "$_DIR/$2/$1"
         fi
     done
 }
