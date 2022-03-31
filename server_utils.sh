@@ -79,14 +79,16 @@ if [ $1 == "--motd" ]; then
     echo "-- MOTD --"
     echo " 🤖 Installing  MOTD..."
     eval apt-get install -y neofetch figlet $VERBOSE
-    mkdir -p /root/.config/neofetch && touch /root/.config/neofetch/config.conf && curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /root/.config/neofetch/config.conf
+    mkdir -p /root/.config/neofetch && touch /root/.config/neofetch/config.conf && \
+    curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /root/.config/neofetch/config.conf && \
+    curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /etc/neofetch/config.conf
     copy_to_usershome /root/.config/neofetch/config.conf .config/neofetch
     rm -rf /etc/motd /etc/update-motd.d/*
     touch /etc/update-motd.d/00-motd && chmod +x /etc/update-motd.d/00-motd
     echo "#!/bin/sh
 #By Mickael (PAPAMICA) Asseline
 figlet $(uname -n | cut -d '.' -f 1)
-neofetch" >> /etc/update-motd.d/00-motd
+neofetch --config /etc/neofetch/config.conf" >> /etc/update-motd.d/00-motd
     echo " ✅ MOTD have been configured !"
 fi
     
