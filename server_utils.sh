@@ -51,7 +51,7 @@ apt_install () {
 copy_to_usershome () {
     _USERS="$(awk -F':' '{ if ( $3 >= 500 ) print $1 }' /etc/passwd)"
     for _USER in $_USERS; do
-        _dir="/home/${_USER}"
+        _DIR="/home/${_USER}"
         if [ -d "$_DIR" ]; then
             mkdir -p $_DIR/$2
             echo " ✅ $1 copied to $_USER home !"
