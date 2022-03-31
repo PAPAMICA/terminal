@@ -72,9 +72,10 @@ echo " ✅ All requirements have been installed  !"
 
 if [ $1 == "--motd" ]; then
     echo ""
+    echo "-- MOTD  --"
     echo " 🤖 Installing  MOTD..."
     eval apt-get install -y neofetch figlet $VERBOSE
-    curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /root/.config/neofetch/config.conf
+    touch /root/.config/neofetch/config.conf && curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /root/.config/neofetch/config.conf
     copy_to_usershome /root/.config/neofetch/config.conf .config/neofetch
     rm -rf /etc/motd /etc/update-motd.d/*
     touch /etc/update-motd.d/00-motd && chmod +x /etc/update-motd.d/00-motd
