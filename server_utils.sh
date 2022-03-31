@@ -47,6 +47,18 @@ apt_install () {
         echo "   ($i/8) ❌ $1"
     fi
 }
+
+copy_to_usershome () {
+    _USERS="$(awk -F':' '{ if ( $3 >= 500 ) print $1 }' /etc/passwd)"
+    for _USER in $_USERS; do
+        _dir="/home/${_USER}/$2"
+        if [ -d "$_DIR" ]; then
+            /bin/cp "$1" "$_DIR"
+            chown $(id -un $_USER):$(id -gn $_USER) "$_DIR/$1"
+        fi
+    done
+}
+
 echo ""
 echo "-- Requirements --"
 echo " 🤖 Installing $1 ..."
@@ -59,9 +71,11 @@ done
 echo " ✅ All requirements have been installed  !"
 
 if [ $1 == "--motd" ]; then
+    echo ""
     echo " 🤖 Installing  MOTD..."
     eval apt-get install -y neofetch figlet $VERBOSE
-    rm ~/.config/neofetch/config.conf && curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > ~/.config/neofetch/config.conf
+    curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /root/.config/neofetch/config.conf
+    copy_to_usershome /root/.config/neofetch/config.conf .config/neofetch
     rm -rf /etc/motd /etc/update-motd.d/*
     touch /etc/update-motd.d/00-motd && chmod +x /etc/update-motd.d/00-motd
     echo "#!/bin/sh
