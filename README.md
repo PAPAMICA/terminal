@@ -46,6 +46,11 @@ If you want an oneliner and you don't have curl installed :
 apt update && apt install -y curl && bash -c "$(curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh)"
 ```
 
+With --motd :
+```bash
+apt update && apt install -y curl && curl -Ls https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh | bash -s -- --motd
+```
+
 With --verbose :
 ```bash
 apt update && apt install -y curl && curl -Ls https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh | bash -s -- --verbose
