@@ -6,9 +6,15 @@ if [ -n "$1" ]; then
     if [ $1 == "--verbose" ]; then
         VERBOSE=" "   
     fi
-    if [ $1 == "--help" ]; then
+    elif [ $1 == "--help" ]; then
         echo 'This script installs differents tools for the Shell (Check https://github.com/PAPAMICA/terminal).
-    Use the "--verbose" argument to display the logs'
+    Use "--verbose" to display the logs
+    Use "--motd" to update your motd'
+        exit
+    elif [ $1 == "--motd" ]; then
+        :
+    else
+        echo "This argument is not recognized ($1)"
         exit
     fi
 fi
@@ -52,6 +58,18 @@ for PACKAGE in $PACKAGES; do
     apt_install $PACKAGE
 done
 echo " ✅ All requirements have been installed  !"
+
+if [ $1 == "--motd" ]; then
+    apt install -y neofetch figlet
+    rm ~/.config/neofetch/config.conf && curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > ~/.config/neofetch/config.conf
+    rm -rf /etc/motd /etc/update-motd.d/
+    touch /etc/update-motd.d/00-motd && chmod +x /etc/update-motd.d/00-motd
+    echo "#!/bin/sh
+#By Mickael (PAPAMICA) Asseline
+figlet $(uname -n | cut -d '.' -f 1)
+neofetch" >> /etc/update-motd.d/00-motd
+fi
+    
 
 
 ## Applications
@@ -175,10 +193,10 @@ install='apt install -y exa '$VERBOSE''
 zshrc='alias ls="exa -a --icons"         # short, multi-line
 alias ll="exa -1a --icons"        # list, 1 per line
 alias ld="ll"             # ^^^, NOTE: Trying to move to this for alternate hand commands
-alias la="exa -la --icons"        # list with info
+alias la="exa -lagh --icons"        # list with info
 alias lt="exa -a --tree --icons --level=2"        # list with tree level 2
 alias ltf="exa -a --tree --icons"        # list with tree
-alias lat="exa -la --tree --icons"        # list with info and tree'
+alias lat="exa -lagh --tree --icons"        # list with info and tree'
 app_install $app $install $zshrc
 
 ## fd
