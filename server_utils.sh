@@ -11,7 +11,7 @@ if [ -n "$1" ]; then
     Use "--motd" to update your motd'
         exit
     elif [ $1 == "--motd" ]; then
-        :
+        echo " ✅ MOTD selected"
     else
         echo "This argument is not recognized ($1)"
         exit
