@@ -53,6 +53,7 @@ copy_to_usershome () {
     for _USER in $_USERS; do
         _dir="/home/${_USER}/$2"
         if [ -d "$_DIR" ]; then
+            mkdir -p $_DIR
             /bin/cp "$1" "$_DIR"
             chown $(id -un $_USER):$(id -gn $_USER) "$_DIR/$1"
         fi
@@ -75,7 +76,7 @@ if [ $1 == "--motd" ]; then
     echo "-- MOTD --"
     echo " 🤖 Installing  MOTD..."
     eval apt-get install -y neofetch figlet $VERBOSE
-    touch /root/.config/neofetch/config.conf && curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /root/.config/neofetch/config.conf
+    mkdir -p /root/.config/neofetch && touch /root/.config/neofetch/config.conf && curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /root/.config/neofetch/config.conf
     copy_to_usershome /root/.config/neofetch/config.conf .config/neofetch
     rm -rf /etc/motd /etc/update-motd.d/*
     touch /etc/update-motd.d/00-motd && chmod +x /etc/update-motd.d/00-motd
