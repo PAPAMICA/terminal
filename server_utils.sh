@@ -83,7 +83,7 @@ if [ $1 == "--motd" ]; then
     curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /root/.config/neofetch/config.conf
     mkdir -p /etc/neofetch && touch /etc/neofetch/config.conf
     curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /etc/neofetch/config.conf
-    copy_to_usershome /root/.config/neofetch/ .config/neofetch
+    copy_to_usershome /root/.config/neofetch/ .config
     rm -rf /etc/motd /etc/update-motd.d/*
     touch /etc/update-motd.d/00-motd && chmod +x /etc/update-motd.d/00-motd
     echo "#!/bin/sh
@@ -274,9 +274,9 @@ app_install $app $install $zshrc
 ## Copy to others users
 echo ""
 echo "-- OTHERS USERS --"
-copy_to_usershome /root/.config/cheat .config/cheat
-copy_to_usershome /root/.oh-my-zsh .oh-my-zsh
-copy_to_usershome /root/.zsh .zsh
+copy_to_usershome /root/.config/cheat .config
+copy_to_usershome /root/.oh-my-zsh .
+copy_to_usershome /root/.zsh .
 
 localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 zsh
