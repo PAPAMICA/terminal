@@ -61,7 +61,7 @@ You can display help with `--help`:
 curl -Ls https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh | bash -s -- --help
 ```
 
-If you want an oneliner for mottd, all-users and you don't have curl installed :
+If you want an oneliner for motd, all-users and you don't have curl installed :
 ```bash
 apt update && apt install -y curl && curl -Ls https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh | bash -s -- --motd --all-users
 ```
