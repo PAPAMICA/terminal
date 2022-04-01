@@ -50,15 +50,15 @@ apt_install () {
 
 copy_to_usershome () {
     _USERS="$(awk -F':' '{ if ( $3 >= 500 ) print $1 }' /etc/passwd)"
-    SOURCEFILE=$1
+    FOLDERSOURCE=$1
     FOLDERDESTINATION=$2
     for _USER in $_USERS; do
         _DIR="/home/${_USER}"
         if [ -d "$_DIR" ]; then
             mkdir -p $_DIR/$FOLDERDESTINATION
-            echo " ✅ $SOURCEFILE copied to $_USER home !"
-            /bin/cp "$SOURCEFILE" "$_DIR/$FOLDERDESTINATION"
-            chown $(id -un $_USER):$(id -gn $_USER) "$_DIR/$FOLDERDESTINATION/${SOURCEFILE##*/}"
+            echo " ✅ $FOLDERDESTINATION copied to $_USER home !"
+            /bin/cp -r "$FOLDERSOURCE" "$_DIR/$FOLDERDESTINATION"
+            chown -R $(id -un $_USER):$(id -gn $_USER) "$_DIR}"
         fi
     done
 }
@@ -83,7 +83,7 @@ if [ $1 == "--motd" ]; then
     curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /root/.config/neofetch/config.conf
     mkdir -p /etc/neofetch && touch /etc/neofetch/config.conf
     curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /etc/neofetch/config.conf
-    copy_to_usershome /root/.config/neofetch/config.conf .config/neofetch
+    copy_to_usershome /root/.config/neofetch/ .config/neofetch
     rm -rf /etc/motd /etc/update-motd.d/*
     touch /etc/update-motd.d/00-motd && chmod +x /etc/update-motd.d/00-motd
     echo "#!/bin/sh
@@ -270,6 +270,11 @@ app='zsh_syntax_highlighting'
 install='git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting '$VERBOSE''
 zshrc='source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 app_install $app $install $zshrc
+
+## Copy to others users
+copy_to_usershome /root/.config/cheat .config/cheat
+copy_to_usershome /root/.oh-my-zsh .oh-my-zsh
+copy_to_usershome /root/.zsh .zsh
 
 localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 zsh
