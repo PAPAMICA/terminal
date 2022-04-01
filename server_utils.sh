@@ -190,7 +190,7 @@ curl -s "https://raw.githubusercontent.com/PAPAMICA/terminal/main/cheat_autocomp
 mkdir ~/.config/cheat/cheatsheets/personal/'
 zshrc="alias \"?\"=\"cheat\"
 alias \"??\"=\"cheat perso\"
-alias cheat-update='git -C ~/.config/cheat/cheatsheets/papamica/ pull '$VERBOSE' && echo \" ✅ Cheats updated !\"'"
+alias cheat-update='git -C ~/.config/cheat/cheatsheets/papamica/ pull > /dev/null 2> /dev/null && echo \" ✅ Cheats updated !\"'"
 app_install $app $install $zshrc
 
 ## direnv

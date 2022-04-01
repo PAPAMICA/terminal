@@ -7,7 +7,7 @@ _cheat_complete_personal_cheatsheets()
   cheats=("${(f)$(cheat -l -t personal | tail -n +2 | cut -d' ' -f1)}")
   _describe -t cheats 'cheats' cheats
 }
-openstack server list --column Name --format value   
+
 _cheat_complete_full_cheatsheets()
 {
   cheats=("${(f)$(cheat -l | tail -n +2 | cut -d' ' -f1)}")
