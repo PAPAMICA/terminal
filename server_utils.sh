@@ -290,7 +290,7 @@ zshrc='source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 app_install $app $install $zshrc
 
 ## Copy to others users
-if [ $ALLUSER -eq 1 ]; then
+if [ $ALLUSER == 1 ]; then
     echo ""
     echo "-- OTHERS USERS --"
     copy_to_usershome /root/.config/cheat .config
