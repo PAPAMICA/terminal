@@ -31,7 +31,7 @@ done
 
 # Check if Debian / Ubuntu and if root
 if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
+  then echo " ❌ Please run as root"
   exit
 fi
 if [ -x "$(command -v apt-get)" ]; then
