@@ -7,17 +7,19 @@ ALLUSERS=0
 for argument in "$@"; do
     if [ -n "$argument" ]; then
         if [ $argument == "--verbose" ]; then
+            echo " ✅ Verbose selected"
             VERBOSE=" "   
         elif [ $argument == "--help" ]; then
             echo 'This script installs differents tools for the Shell (Check https://github.com/PAPAMICA/terminal).
         Use "--verbose" to display the logs
-        Use "--motd" to update your motd'
+        Use "--motd" to update your motd
+        Use "--all-users" to apply all modifications to alls users'
             exit
         elif [ $argument == "--motd" ]; then
-            echo " ✅  MOTD selected"
+            echo " ✅ MOTD selected"
             MOTD=1
         elif [ $argument == "--all-users" ]; then
-            echo " ✅  All users selected"
+            echo " ✅ All users selected"
             ALLUSERS=1
         else
             echo "This argument is not recognized ($argument)"
@@ -278,8 +280,8 @@ install='git clone https://github.com/rupa/z.git /bin/z '$VERBOSE''
 zshrc='. /bin/z/z.sh'
 app_install $app $install $zshrc
 
-## zsh_autocompletion
-app='zsh_autocompletion'
+## zsh_autoggestions
+app='zsh_autoggestions'
 install='git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions '$VERBOSE''
 zshrc='source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"'
