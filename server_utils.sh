@@ -99,7 +99,7 @@ if [ $MOTD == 1 ]; then
     curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /root/.config/neofetch/config.conf
     mkdir -p /etc/neofetch && touch /etc/neofetch/config.conf
     curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /etc/neofetch/config.conf
-    if [ $ALLUSER -eq 1 ]; then
+    if [ $ALLUSER == 1 ]; then
         copy_to_usershome /root/.config/neofetch/ .config
     fi
     rm -rf /etc/motd /etc/update-motd.d/*
