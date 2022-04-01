@@ -2,21 +2,27 @@
 
 # Active Verbose & Help
 VERBOSE="> /dev/null 2> /dev/null"
-if [ -n "$1" ]; then
-    if [ $1 == "--verbose" ]; then
-        VERBOSE=" "   
-    elif [ $1 == "--help" ]; then
-        echo 'This script installs differents tools for the Shell (Check https://github.com/PAPAMICA/terminal).
-    Use "--verbose" to display the logs
-    Use "--motd" to update your motd'
-        exit
-    elif [ $1 == "--motd" ]; then
-        echo " ✅ MOTD selected"
-    else
-        echo "This argument is not recognized ($1)"
-        exit
+for argument in "$@"; do
+    if [ -n "$argument" ]; then
+        if [ $argument == "--verbose" ]; then
+            VERBOSE=" "   
+        elif [ $argument == "--help" ]; then
+            echo 'This script installs differents tools for the Shell (Check https://github.com/PAPAMICA/terminal).
+        Use "--verbose" to display the logs
+        Use "--motd" to update your motd'
+            exit
+        elif [ $argument == "--motd" ]; then
+            echo " ✅  MOTD selected"
+            MOTD=1
+        elif [ $argument == "--all-users" ]; then
+            echo " ✅  All users selected"
+            ALLUSERS=1
+        else
+            echo "This argument is not recognized ($argument)"
+            exit
+        fi
     fi
-fi
+done
 
 
 # Check if Debian / Ubuntu
@@ -63,6 +69,16 @@ copy_to_usershome () {
     done
 }
 
+zsh_all_users () {
+    _USERS="$(awk -F':' '{ if ( $3 >= 500 ) print $1 }' /etc/passwd)"
+    for _USER in $_USERS; do
+        _DIR="/home/${_USER}"
+        if [ -d "$_DIR" ]; then
+            chsh --shell /sbin/nologin root
+        fi
+    done
+}
+
 echo ""
 echo "-- Requirements --"
 echo " 🤖 Installing $1 ..."
@@ -74,7 +90,7 @@ for PACKAGE in $PACKAGES; do
 done
 echo " ✅ All requirements have been installed  !"
 
-if [ $1 == "--motd" ]; then
+if [ $MOTD == 1 ]; then
     echo ""
     echo "-- MOTD --"
     echo " 🤖 Installing  MOTD..."
@@ -83,7 +99,9 @@ if [ $1 == "--motd" ]; then
     curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /root/.config/neofetch/config.conf
     mkdir -p /etc/neofetch && touch /etc/neofetch/config.conf
     curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /etc/neofetch/config.conf
-    copy_to_usershome /root/.config/neofetch/ .config
+    if [ $ALLUSER -eq 1 ]; then
+        copy_to_usershome /root/.config/neofetch/ .config
+    fi
     rm -rf /etc/motd /etc/update-motd.d/*
     touch /etc/update-motd.d/00-motd && chmod +x /etc/update-motd.d/00-motd
     echo "#!/bin/sh
@@ -272,13 +290,16 @@ zshrc='source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 app_install $app $install $zshrc
 
 ## Copy to others users
-echo ""
-echo "-- OTHERS USERS --"
-copy_to_usershome /root/.config/cheat .config
-copy_to_usershome /root/.oh-my-zsh .
-copy_to_usershome /root/.zsh .
-copy_to_usershome /root/.zshrc .
+if [ $ALLUSER -eq 1 ]; then
+    echo ""
+    echo "-- OTHERS USERS --"
+    copy_to_usershome /root/.config/cheat .config
+    copy_to_usershome /root/.oh-my-zsh .
+    copy_to_usershome /root/.zsh .
+    copy_to_usershome /root/.zshrc .
+    zsh_all_users
+fi
 
-sed 's/bash/zsh/g' /etc/passwd
+chsh --shell /bin/zsh root
 localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 zsh
