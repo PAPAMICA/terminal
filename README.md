@@ -41,27 +41,29 @@ Article Tech2Tech (in French) : [ppmc.me/t2t-terminal](https://ppmc.me/t2t-termi
 bash -c "$(curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh)"
 ```
 
-If you want an oneliner and you don't have curl installed :
-```bash
-apt update && apt install -y curl && bash -c "$(curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh)"
-```
-
 You can add a dynamic MOTD (with neofetch) with `--motd`:
 ```bash
-apt update && apt install -y curl && curl -Ls https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh | bash -s -- --motd
+curl -Ls https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh | bash -s -- --motd
 ```
+
 You can apply all modifications to all users with `--all-users`:
 ```bash
-apt update && apt install -y curl && curl -Ls https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh | bash -s -- --all-users
+curl -Ls https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh | bash -s -- --all-users
 ```
 
 You can display all logs with `--verbose`:
 ```bash
-apt update && apt install -y curl && curl -Ls https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh | bash -s -- --verbose
+curl -Ls https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh | bash -s -- --verbose
 ```
+
 You can display help with `--help`:
 ```bash
-apt update && apt install -y curl && curl -Ls https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh | bash -s -- --help
+curl -Ls https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh | bash -s -- --help
+```
+
+If you want an oneliner for mottd, all-users and you don't have curl installed :
+```bash
+apt update && apt install -y curl && curl -Ls https://raw.githubusercontent.com/PAPAMICA/terminal/main/server_utils.sh | bash -s -- --motd --all-users
 ```
 ## 🔨 Debian environment
 I work on MacOS, but sometimes I need to run some scripts in Debian directly.. So .. I have scripted that !
