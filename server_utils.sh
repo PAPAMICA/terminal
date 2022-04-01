@@ -56,7 +56,7 @@ copy_to_usershome () {
         _DIR="/home/${_USER}"
         if [ -d "$_DIR" ]; then
             mkdir -p $_DIR/$FOLDERDESTINATION
-            echo " ✅ $FOLDERDESTINATION copied to $_USER home !"
+            echo " ✅ $FOLDERSOURCE copied to $_USER home !"
             /bin/cp -r "$FOLDERSOURCE" "$_DIR/$FOLDERDESTINATION"
             chown -R $(id -un $_USER):$(id -gn $_USER) "$_DIR"
         fi
@@ -277,6 +277,7 @@ echo "-- OTHERS USERS --"
 copy_to_usershome /root/.config/cheat .config
 copy_to_usershome /root/.oh-my-zsh .
 copy_to_usershome /root/.zsh .
+copy_to_usershome .zshrc .
 
 localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 zsh
