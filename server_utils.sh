@@ -58,7 +58,7 @@ copy_to_usershome () {
             mkdir -p $_DIR/$FOLDERDESTINATION
             echo " ✅ $FOLDERDESTINATION copied to $_USER home !"
             /bin/cp -r "$FOLDERSOURCE" "$_DIR/$FOLDERDESTINATION"
-            chown -R $(id -un $_USER):$(id -gn $_USER) "$_DIR}"
+            chown -R $(id -un $_USER):$(id -gn $_USER) "$_DIR"
         fi
     done
 }
@@ -272,6 +272,8 @@ zshrc='source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 app_install $app $install $zshrc
 
 ## Copy to others users
+echo ""
+echo "-- OTHERS USERS --"
 copy_to_usershome /root/.config/cheat .config/cheat
 copy_to_usershome /root/.oh-my-zsh .oh-my-zsh
 copy_to_usershome /root/.zsh .zsh
