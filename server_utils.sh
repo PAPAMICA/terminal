@@ -277,7 +277,7 @@ echo "-- OTHERS USERS --"
 copy_to_usershome /root/.config/cheat .config
 copy_to_usershome /root/.oh-my-zsh .
 copy_to_usershome /root/.zsh .
-copy_to_usershome .zshrc .
+copy_to_usershome /root/.zshrc .
 
 localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 zsh
