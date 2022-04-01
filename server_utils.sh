@@ -19,6 +19,7 @@ for argument in "$@"; do
         elif [ $argument == "--all-users" ]; then
             echo " ✅  All users selected"
             ALLUSERS=1
+            echo $ALLUSERS
         else
             echo "This argument is not recognized ($argument)"
             exit
@@ -76,7 +77,7 @@ zsh_all_users () {
     for _USER in $_USERS; do
         _DIR="/home/${_USER}"
         if [ -d "$_DIR" ]; then
-            chsh --shell /sbin/nologin root
+            chsh --shell /sbin/nologin $_USER
         fi
     done
 }
@@ -101,7 +102,7 @@ if [[ "$MOTD" == 1 ]]; then
     curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /root/.config/neofetch/config.conf
     mkdir -p /etc/neofetch && touch /etc/neofetch/config.conf
     curl -s https://raw.githubusercontent.com/PAPAMICA/terminal/main/neofetch.conf > /etc/neofetch/config.conf
-    if [[ "$ALLUSER" == 1 ]]; then
+    if [[ "$ALLUSERS" == 1 ]]; then
         copy_to_usershome /root/.config/neofetch/ .config
     fi
     rm -rf /etc/motd /etc/update-motd.d/*
@@ -292,7 +293,7 @@ zshrc='source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 app_install $app $install $zshrc
 
 ## Copy to others users
-if [[ "$ALLUSER" == 1 ]]; then
+if [[ "$ALLUSERS" == 1 ]]; then
     echo ""
     echo "-- OTHERS USERS --"
     copy_to_usershome /root/.config/cheat .config
