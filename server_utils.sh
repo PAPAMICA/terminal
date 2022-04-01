@@ -19,7 +19,6 @@ for argument in "$@"; do
         elif [ $argument == "--all-users" ]; then
             echo " ✅  All users selected"
             ALLUSERS=1
-            echo $ALLUSERS
         else
             echo "This argument is not recognized ($argument)"
             exit
@@ -77,7 +76,7 @@ zsh_all_users () {
     for _USER in $_USERS; do
         _DIR="/home/${_USER}"
         if [ -d "$_DIR" ]; then
-            chsh --shell /sbin/nologin $_USER
+            chsh --shell /bin/zsh $_USER
         fi
     done
 }
