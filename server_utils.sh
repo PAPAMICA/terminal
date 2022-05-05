@@ -150,6 +150,8 @@ app_install () {
 app='git'
 install='apt-get install -y git '$VERBOSE''
 zshrc="gic() { eval 'git add . && git commit -a -m \"'\$@'\" && git push'}
+gbc() { eval 'git pull && git checkout -b '\$@' && git push --set-upstream origin '\$@''}
+gweb() { git remote -v | head -n 1 | awk -F \"@\" '{print \$2}' | awk -F " " '{print \$1}' | sed 's/:/\//g' | sed 's/.git//g' | awk '{print \"http://\"\$1}' | xargs open }
 alias gaa=\"git add *\"
 alias ga=\"git add\"
 alias gps=\"git push\"
