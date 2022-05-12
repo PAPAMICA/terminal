@@ -8,8 +8,8 @@
   <a href="#"><img src="https://readme-typing-svg.herokuapp.com?center=true&vCenter=true&lines=My+terminal;"></a>
 </p>
 <p align="center">
-    *Update : 2022/05/12*
-    Article Tech2Tech (in French) : [ppmc.me/t2t-terminal](https://ppmc.me/t2t-terminal)
+    Update : 2022/05/12<br />
+    Article Tech2Tech (in French) : https://ppmc.me/t2t-terminal
 </p>
 <p align="center">
     <a href="https://github.com/PAPAMICA/container-updater#packages"><img src="https://img.shields.io/badge/Packages-%2341454A.svg?style=for-the-badge&logo=target&logoColor=white"> </a>
