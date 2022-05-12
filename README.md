@@ -1,7 +1,28 @@
-# ✨ My terminal ✨
-*Update : 2022/09/05*
+<p align="center">
+  <a href="https://papamica.com">
+    <img src="https://zupimages.net/up/20/04/7vtd.png" width="140px" alt="PAPAMICA" />
+  </a>
+</p>
 
-Article Tech2Tech (in French) : [ppmc.me/t2t-terminal](https://ppmc.me/t2t-terminal)
+<p align="center">
+  <a href="#"><img src="https://readme-typing-svg.herokuapp.com?center=true&vCenter=true&lines=My+terminal;"></a>
+</p>
+<p align="center">
+    *Update : 2022/05/12*
+    Article Tech2Tech (in French) : [ppmc.me/t2t-terminal](https://ppmc.me/t2t-terminal)
+</p>
+<p align="center">
+    <a href="https://github.com/PAPAMICA/container-updater#packages"><img src="https://img.shields.io/badge/Packages-%2341454A.svg?style=for-the-badge&logo=target&logoColor=white"> </a>
+    <a href="https://github.com/PAPAMICA/terminal#%EF%B8%8F-install-script-for-debian--ubuntu-server"><img src="https://img.shields.io/badge/Install_script_for_debian-%2341454A.svg?style=for-the-badge&logo=target&logoColor=white"> </a>
+    <a href="https://github.com/PAPAMICA/terminal#-debian-environment"><img src="https://img.shields.io/badge/Debian_VM-%2341454A.svg?style=for-the-badge&logo=target&logoColor=white"> </a>
+    <br /><br />
+    <a href="#"><img src="https://img.shields.io/badge/bash-%23CDCDCE.svg?style=for-the-badge&logo=gnubash&logoColor=1B1B1F"> </a>
+    <a href="https://www.debian.org/index.fr.html"><img src="https://img.shields.io/badge/Debian-%23A81D33.svg?style=for-the-badge&logo=debian&logoColor=white"> </a>
+    <a href="#"><img src="https://img.shields.io/badge/macos-%23000000.svg?style=for-the-badge&logo=apple&logoColor=white"> </a>
+    <br />
+</p> 
+
+
 ## ⚡️ Informations
 **Operating System :** MacOS Monterey
 
