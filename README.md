@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://papamica.com">
-    <img src="https://zupimages.net/up/20/04/7vtd.png" width="140px" alt="PAPAMICA" />
+    <img src="https://img.papamica.com/logo/papamica.png" width="140px" alt="PAPAMICA" />
   </a>
 </p>
 
