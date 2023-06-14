@@ -250,18 +250,18 @@ alias ltf="exa -a --tree --icons"        # list with tree
 alias lat="exa -lagh --tree --icons"        # list with info and tree'
 app_install $app $install $zshrc
 
-## fd
-app='fdfind'
-install='apt install -y fd-find '$VERBOSE''
-zshrc='alias locate="fdfind"
-alias find="fdfind"'
-app_install $app $install $zshrc
+# ## fd
+# app='fdfind'
+# install='apt install -y fd-find '$VERBOSE''
+# zshrc='alias locate="fdfind"
+# alias find="fdfind"'
+# app_install $app $install $zshrc
 
-## fuck
-app='fuck'
-install='pip3 install thefuck  '$VERBOSE''
-zshrc='eval $(thefuck --alias)'
-app_install $app $install $zshrc
+# ## fuck
+# app='fuck'
+# install='pip3 install thefuck  '$VERBOSE''
+# zshrc='eval $(thefuck --alias)'
+# app_install $app $install $zshrc
 
 ## micro
 app='micro'
