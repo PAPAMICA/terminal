@@ -166,11 +166,11 @@ sed -i -e "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME="agnoster"/g" ~/.zshrc '$VERBO
 zshrc=''
 app_install $app $install $zshrc
 
-## ad
-app='ad'
-install='pip3 install advance-touch '$VERBOSE''
-zshrc='alias add="python3 ~/Library/Python/3.9/lib/python/site-packages/advance_touch.py"'
-app_install $app $install $zshrc
+# ## ad
+# app='ad'
+# install='pip3 install advance-touch '$VERBOSE''
+# zshrc='alias add="python3 ~/Library/Python/3.9/lib/python/site-packages/advance_touch.py"'
+# app_install $app $install $zshrc
 
 ## atuin
 app='atuin'
