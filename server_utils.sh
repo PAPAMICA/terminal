@@ -197,7 +197,7 @@ curl -s https://api.github.com/repos/aristocratos/btop/releases/latest \
 | tr -d \" \
 | wget -qi - && \
 tar -xf btop-x86_64-linux-musl.tbz '$VERBOSE' && \
-make install '$VERBOSE' && cd .. && rm -rf btop'
+cd btop && make install '$VERBOSE' && cd ../.. && rm -rf btop'
 zshrc='alias top="btop --utf-force"
 alias btop="btop --utf-force"
 alias htop="btop --utf-force"'
